@@ -1,0 +1,197 @@
+.about {
+  background: var(--color-bg-alt);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 48px;
+  letter-spacing: -0.5px;
+}
+
+/* 상단: 사진 + 자기소개 */
+.top {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 56px;
+}
+
+.photoWrap {
+  text-align: center;
+}
+
+.photo {
+  width: 200px;
+  height: 260px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: var(--color-border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.bio {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--color-secondary);
+  white-space: pre-line;
+}
+
+/* 학력 / 경력 / 자격 블록 */
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.block {
+  /* each section block */
+}
+
+.blockTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--color-accent);
+  display: inline-block;
+}
+
+/* 타임라인 */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 20px;
+  border-left: 2px solid var(--color-border);
+}
+
+.timelineItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+}
+
+.timeDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 6px;
+  margin-left: -26px;
+}
+
+.timeContent {
+  flex: 1;
+}
+
+.itemTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.itemSub {
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+  margin-bottom: 4px;
+}
+
+.itemDesc {
+  font-size: 0.85rem;
+  color: var(--color-secondary);
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+.period {
+  font-size: 0.8rem;
+  color: #999;
+  font-weight: 500;
+}
+
+/* 자격/수상 카드 */
+.certGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.certCard {
+  display: flex;
+  gap: 14px;
+  padding: 20px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.certCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.certIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.certType {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.certName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.certDetail {
+  font-size: 0.8rem;
+  color: var(--color-secondary);
+  margin-bottom: 4px;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .top {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .photoWrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .photo {
+    width: 160px;
+    height: 210px;
+  }
+
+  .certGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .certGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
