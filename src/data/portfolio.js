@@ -91,40 +91,62 @@ export const projects = [
     id: 1,
     title: 'Within Eco',
     ko: {
-      subtitle: '경기도 환경 탐험 플랫폼',
-      description: '경기도의 환경 명소를 탐험하고 공유할 수 있는 웹 플랫폼입니다. Google Maps API를 활용한 인터랙티브 지도와 사용자 리뷰 시스템을 구현했습니다. 경기기후 플랫폼 경진대회 최우수상 수상작.',
+      subtitle: '경기도 환경 탐험 게이미피케이션 웹앱',
+      description: '경기도 27개 시군구 100여 개 환경 명소를 게이미피케이션으로 탐험하는 웹 플랫폼입니다. 스탬프 수집·배지·레벨 시스템, Google OAuth 인증, 대기질/기후 API 연동, 관리자 대시보드까지 1인 풀스택 개발. 경기기후 플랫폼 경진대회 최우수상.',
       detail: {
-        overview: '경기도 기후환경 데이터를 활용하여 시민들이 주변 환경 명소를 직관적으로 탐색하고, 방문 후기를 공유할 수 있는 공공 서비스 웹 플랫폼입니다. 1인 풀스택 개발로 기획부터 배포까지 전 과정을 수행했습니다.',
-        background: '경기도 기후환경정책과의 공모전에 참가하여, 기후 데이터를 시민 친화적으로 전달하는 서비스를 기획했습니다. 초기에는 Three.js 기반 3D 시각화를 시도했으나, 모바일 환경 성능 저하와 일정 리스크를 고려해 2D 차트 + Google Maps 기반으로 전환하는 결단을 내렸고, 이 선택이 직관적인 UX로 이어져 최우수상을 수상하게 되었습니다.',
-        role: '1인 풀스택 개발 (기획 / 프론트엔드 / 백엔드 / 배포)',
+        overview: `경기도 27개 시군구의 100여 개 환경 명소(자연, 수자원, 생태, 문화, 스포츠 5개 카테고리)를 게이미피케이션 방식으로 탐험하는 공공 서비스 웹 플랫폼입니다.
+사용자는 Google Maps 기반 인터랙티브 지도에서 명소를 탐색하고, 방문 시 스탬프를 수집하며, XP·레벨·배지(15종 이상)를 획득합니다. 댓글·사진 업로드·좋아요 등 소셜 기능과 실시간 대기질/기후 데이터 연동까지 포함한 종합 서비스입니다.
+1인 풀스택 개발로 기획, React 프론트엔드, Express 백엔드, PostgreSQL DB 설계, Docker 컨테이너화, AWS EC2 배포까지 전 과정을 수행했습니다.`,
+        background: `경기도 기후환경정책과의 공모전에 참가하여, "기후 데이터를 시민이 직접 체험하게 만드는 서비스"를 기획했습니다.
+초기에는 Three.js 기반 3D 지구본 시각화를 구현하기 시작했으나, 개발 중간 점검에서 모바일 로딩 속도 저하와 저사양 기기 구동 불가 문제를 확인했습니다. 화려한 기술 시연보다 "누구나 빠르게 접근 가능한 공공 서비스"라는 본질이 우선이라 판단하고, 며칠간 작성한 3D 코드를 전면 폐기했습니다. 이후 Google Maps API + 게이미피케이션이라는 새로운 방향으로 전환하여, 확보된 리소스를 마커 클러스터링, 배지 시스템, 소셜 기능에 집중 투자했습니다.
+결과적으로 "직관적이고 누구나 사용하기 편리하다"는 평가를 받아 최우수상을 수상했습니다.`,
+        role: '1인 풀스택 개발 (기획 / 프론트엔드 / 백엔드 / DB 설계 / 인프라 / 배포)',
         highlights: [
-          'Google Maps API 기반 인터랙티브 지도와 마커 클러스터링 구현',
-          'RESTful API 설계 및 PostgreSQL 데이터 모델링',
-          'Docker 컨테이너화를 통한 AWS EC2 배포 자동화',
-          '서비스 경량화를 위해 3D → 2D 시각화 전환 결정 (성능 최적화)',
-          '경기기후 플랫폼 경진대회 최우수상 수상',
+          'Google Maps API + 마커 클러스터링으로 100여 개 명소 인터랙티브 지도 구현',
+          '게이미피케이션 엔진: 스탬프 수집, XP/레벨 시스템, 15종 이상 배지 (방문 횟수, 카테고리 마스터, 지역 탐험, 연속 방문 스트릭 등)',
+          'Google OAuth 2.0 인증 + 커스텀 JWT 세션 관리 (168시간 만료, DB 검증)',
+          '소셜 기능: 명소별 댓글(페이지네이션), 사진 업로드(5MB, S3/로컬 이중 지원), 좋아요',
+          'PostgreSQL 10개 테이블 설계: UUID PK, JSONB 컬럼, 자동 타임스탬프 트리거, 캐스케이드 삭제',
+          'Zustand persist 미들웨어로 게임 상태 로컬 저장 + 5초 디바운스 클라우드 동기화',
+          '관리자 대시보드: 유저 관리, 일별 가입 추이, 인기 명소 랭킹, 방문 이력 모니터링',
+          '실시간 대기질 API + 기후 데이터 연동으로 환경 정보 제공',
+          'Docker Compose 3-tier 아키텍처 (Nginx 리버스 프록시 + Express + PostgreSQL) + 헬스체크',
+          'Vitest + JSDOM 기반 유닛 테스트 (Zustand 스토어 테스트)',
+          'Three.js 3D → Google Maps 2D 전환: 모바일 성능과 서비스 본질 우선의 기술적 판단',
+          '경기기후 플랫폼 서비스 개발 경진대회 최우수상 수상',
         ],
       },
     },
     en: {
-      subtitle: 'Gyeonggi-do Environmental Exploration Platform',
-      description: 'A web platform to explore and share environmental attractions in Gyeonggi-do. Built with interactive Google Maps and a user review system. Grand Prize winner at the Gyeonggi Climate Platform Competition.',
+      subtitle: 'Gyeonggi-do Eco-Exploration Gamification Web App',
+      description: 'A gamification web platform for exploring 100+ environmental spots across 27 Gyeonggi-do districts. Features stamp collection, badges, leveling, Google OAuth, air quality/climate API integration, and admin dashboard. Solo full-stack development. Grand Prize winner.',
       detail: {
-        overview: 'A public service web platform that allows citizens to intuitively explore nearby environmental spots and share visit reviews using Gyeonggi-do climate data. Solo full-stack development from planning to deployment.',
-        background: 'Developed for the Gyeonggi-do Climate & Environment Policy Division competition. Initially attempted Three.js 3D visualization, but pivoted to 2D charts + Google Maps for better mobile performance and UX, which contributed to winning the Grand Prize.',
-        role: 'Solo Full-Stack Developer (Planning / Frontend / Backend / Deployment)',
+        overview: `A public service web platform where citizens explore 100+ environmental spots (nature, water, ecology, culture, sports) across 27 Gyeonggi-do districts through gamification.
+Users navigate an interactive Google Maps-based map, collect stamps by visiting spots, and earn XP, levels, and badges (15+ types). Includes social features (comments, photo uploads, likes) and real-time air quality/climate data integration.
+Solo full-stack development covering planning, React frontend, Express backend, PostgreSQL schema design, Docker containerization, and AWS EC2 deployment.`,
+        background: `Developed for the Gyeonggi-do Climate & Environment Policy Division competition with the concept of "making climate data something citizens directly experience."
+Initially implemented Three.js 3D globe visualization, but mid-development review revealed mobile loading issues and low-spec device incompatibility. Prioritizing accessible public service over flashy tech demos, I scrapped days of 3D code and pivoted to Google Maps API + gamification. Redirected resources into marker clustering, badge systems, and social features.
+This decision led to the evaluation of "intuitive and universally accessible," winning the Grand Prize.`,
+        role: 'Solo Full-Stack Developer (Planning / Frontend / Backend / DB Design / Infra / Deployment)',
         highlights: [
-          'Interactive map with Google Maps API and marker clustering',
-          'RESTful API design with PostgreSQL data modeling',
-          'Dockerized deployment automation on AWS EC2',
-          'Strategic pivot from 3D to 2D visualization for performance',
-          'Grand Prize at Gyeonggi Climate Platform Competition',
+          'Google Maps API + marker clustering for 100+ interactive spot markers',
+          'Gamification engine: stamp collection, XP/level system, 15+ badges (visit count, category mastery, regional exploration, streak challenges)',
+          'Google OAuth 2.0 + custom JWT session management (168h expiry, DB validation)',
+          'Social features: paginated comments, photo uploads (5MB, S3/local dual support), likes',
+          'PostgreSQL 10-table schema: UUID PKs, JSONB columns, auto-timestamp triggers, cascade deletes',
+          'Zustand persist middleware for local game state + 5s debounced cloud sync',
+          'Admin dashboard: user management, daily signup trends, popular spot rankings, visit monitoring',
+          'Real-time air quality API + climate data integration',
+          'Docker Compose 3-tier architecture (Nginx reverse proxy + Express + PostgreSQL) with health checks',
+          'Vitest + JSDOM unit testing for Zustand store validation',
+          'Three.js 3D → Google Maps 2D pivot: prioritizing mobile performance and service accessibility',
+          'Grand Prize at Gyeonggi Climate Platform Development Competition',
         ],
       },
     },
     category: 'Web',
-    techs: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'Google Maps'],
-    github: 'https://github.com/wookidoki',
+    techs: ['React 19', 'Zustand', 'Styled Components', 'Node.js', 'Express', 'PostgreSQL', 'Google Maps API', 'Google OAuth', 'Docker', 'Nginx', 'AWS EC2/S3'],
+    github: 'https://github.com/wookidoki/within-eco',
     liveUrl: 'http://44.251.87.125',
     period: '2025.10 ~ 2025.12',
   },
@@ -132,40 +154,68 @@ export const projects = [
     id: 2,
     title: 'EarthWith',
     ko: {
-      subtitle: '환경 보호 커뮤니티',
-      description: '환경 보호 활동을 공유하고 소통하는 커뮤니티 플랫폼입니다. Spring Boot 기반 REST API와 AWS S3 파일 업로드를 구현했습니다.',
+      subtitle: '탄소중립 포인트 환경 커뮤니티 플랫폼',
+      description: 'Spring Boot 3.5 + React 19 기반 환경 커뮤니티 플랫폼. 11개 컨트롤러 60+ REST API, JWT 이중 토큰 인증, 관리자 대시보드(게시글/댓글/회원/신고 관리), 소셜 피드(무한 스크롤), 뉴스 API 연동까지 포함한 팀 프로젝트에서 백엔드 전체를 설계·구현했습니다.',
       detail: {
-        overview: '환경 보호 활동을 기록하고 다른 사용자들과 소통할 수 있는 커뮤니티 웹 서비스입니다. 게시판, 댓글, 파일 업로드 등 커뮤니티 필수 기능을 Spring Boot 기반으로 구현했습니다.',
-        background: 'KH정보교육원 세미 프로젝트로 진행한 팀 프로젝트입니다. 백엔드 설계를 맡아 DB 스키마 단계부터 데이터 적재 효율성을 최우선으로 설계했습니다.',
-        role: '백엔드 개발 (DB 설계 / REST API / 파일 업로드)',
+        overview: `환경 보호 활동을 기록하고 커뮤니티로 공유하는 탄소중립 포인트 기반 웹 서비스입니다.
+게시판(카테고리 필터링·검색·인기글), 소셜 피드(무한 스크롤·좋아요·댓글·북마크), 뉴스 API 연동, 탄소/물 발자국 계산기, 유저 랭킹, 관리자 대시보드(게시글·댓글·회원 관리·신고 처리·공지 CRUD) 등 종합적인 커뮤니티 기능을 구현했습니다.
+KH정보교육원 세미 프로젝트로 진행된 팀 프로젝트이며, 저는 백엔드 아키텍처 설계부터 DB 스키마, REST API, 인증/인가, 예외 처리, 파일 업로드까지 백엔드 전체를 담당했습니다.`,
+        background: `DB 스키마 설계 단계부터 "데이터 적재 효율성"을 최우선으로 삼았습니다.
+게시글 상세 조회 시 게시글·댓글·첨부파일을 각각 조회하던 기존 방식(3회 DB 조회)을 MyBatis의 ResultMap Collection과 동적 SQL로 통합하여 1회 조회로 줄였습니다.
+좋아요 기능에서는 매 조회마다 COUNT(*)를 수행하는 대신 TB_LIKE_COUNT 비정규화 테이블을 설계하여 토글 시 증감 업데이트하는 방식으로 읽기 성능을 최적화했습니다.
+Soft Delete + Restore 패턴을 도입하여 관리자가 삭제된 게시글/댓글을 복원할 수 있게 하면서도, 일반 쿼리에서는 STATUS='Y' 필터로 성능 저하 없이 동작하도록 설계했습니다.
+인증 체계는 JWT Access Token(24시간) + Refresh Token(72시간) 이중 구조로 설계하고, Spring Security의 OncePerRequestFilter를 확장한 JwtFilter에서 토큰 검증·만료·계정 정지 상태까지 체크합니다.
+예외 처리는 40개 이상의 ErrorCode enum과 18개 이상의 커스텀 예외 클래스를 정의하고, @RestControllerAdvice 기반 GlobalExceptionHandler에서 일관된 JSON 에러 응답을 반환하도록 설계했습니다.`,
+        role: '백엔드 전체 설계·구현 (DB 스키마 / REST API / 인증·인가 / 예외 처리 / 파일 업로드)',
         highlights: [
-          'Spring Boot 기반 RESTful API 설계 및 구현',
-          'MyBatis 동적 쿼리를 활용한 N+1 유사 문제 해결 (3회 DB 조회 → 1회 통합)',
-          'AWS S3 연동 파일 업로드 및 이미지 관리',
-          'Oracle DB 스키마 설계 및 데이터 정규화',
-          'Spring Security + JWT 기반 인증/인가 구현',
+          'Spring Boot 3.5.7 + Java 21 기반 11개 컨트롤러, 60+ REST API 엔드포인트 설계·구현',
+          'MyBatis ResultMap Collection + 동적 SQL(<choose>, <if>, <sql>)로 N+1 문제 해결 (3회 → 1회 통합 조회)',
+          'JWT 이중 토큰: Access(24h) + Refresh(72h), BCrypt 패스워드 인코딩, Spring Security RBAC (USER/ADMIN)',
+          'JwtFilter(OncePerRequestFilter): 토큰 파싱 → 만료 검증 → 계정 정지 확인 → SecurityContext 설정',
+          '40+ ErrorCode enum + 18개 커스텀 예외 + @RestControllerAdvice GlobalExceptionHandler → 일관된 JSON 에러 응답',
+          'TB_LIKE_COUNT 비정규화 테이블로 좋아요 카운트 읽기 성능 최적화 (COUNT(*) 제거)',
+          'Soft Delete + Restore 패턴: STATUS 컬럼 기반 삭제/복원, 관리자 복원 기능 지원',
+          '이중 페이지네이션: 게시판(오프셋 기반 RowBounds) + 피드(커서 기반 무한 스크롤)',
+          'AWS S3 파일 업로드: 프로필/게시글/공지별 폴더 분리, 고유 파일명 생성 (Eco_timestamp_uuid)',
+          '관리자 대시보드: 게시글·댓글·회원 관리, 신고 처리, 공지 CRUD, 통계 API',
+          '외부 뉴스 API 연동 (환경 키워드 기반 뉴스 검색)',
+          'Oracle DB 13+ 테이블 스키마 설계 (회원, 게시판, 댓글, 좋아요, 북마크, 첨부파일, 신고, 토큰 등)',
         ],
       },
     },
     en: {
-      subtitle: 'Environmental Community Platform',
-      description: 'A community platform for sharing environmental activities. Built with Spring Boot REST API and AWS S3 file uploads.',
+      subtitle: 'Carbon-Neutral Point Environmental Community Platform',
+      description: 'Environmental community platform built with Spring Boot 3.5 + React 19. Designed and implemented the entire backend: 11 controllers with 60+ REST APIs, dual JWT authentication, admin dashboard (post/comment/member/report management), social feed with infinite scroll, and news API integration.',
       detail: {
-        overview: 'A community web service for recording environmental activities and connecting with other users. Implemented essential community features including boards, comments, and file uploads on Spring Boot.',
-        background: 'A team project during the KH Information Education Institute program. Led backend development with a focus on data efficiency from the DB schema design phase.',
-        role: 'Backend Developer (DB Design / REST API / File Upload)',
+        overview: `A carbon-neutral point-based web service for recording and sharing environmental activities.
+Features include boards (category filtering, search, trending posts), social feed (infinite scroll, likes, comments, bookmarks), news API integration, carbon/water footprint calculators, user rankings, and admin dashboard (post/comment/member management, report handling, notice CRUD).
+A team project at KH Information Education Institute where I was responsible for the entire backend architecture — from DB schema design to REST APIs, authentication, exception handling, and file uploads.`,
+        background: `Prioritized "data access efficiency" from the DB schema design phase.
+Consolidated board detail queries (post + comments + attachments) from 3 DB calls to 1 using MyBatis ResultMap Collections with dynamic SQL.
+For likes, replaced per-query COUNT(*) with a denormalized TB_LIKE_COUNT table that updates incrementally on toggle — optimizing read performance.
+Implemented Soft Delete + Restore pattern allowing admins to recover deleted posts/comments while keeping STATUS='Y' filter for zero-overhead normal queries.
+Auth system uses dual JWT tokens (Access 24h + Refresh 72h) with a custom JwtFilter extending OncePerRequestFilter for token validation, expiry checks, and account suspension detection.
+Exception handling uses 40+ ErrorCode enums and 18+ custom exception classes with @RestControllerAdvice GlobalExceptionHandler for consistent JSON error responses.`,
+        role: 'Full Backend Design & Implementation (DB Schema / REST API / Auth / Exception Handling / File Upload)',
         highlights: [
-          'RESTful API design and implementation with Spring Boot',
-          'Resolved N+1-like query issue using MyBatis dynamic SQL (3 queries → 1)',
-          'AWS S3 file upload integration for image management',
-          'Oracle DB schema design and data normalization',
-          'Authentication/authorization with Spring Security + JWT',
+          'Spring Boot 3.5.7 + Java 21: 11 controllers, 60+ REST API endpoints',
+          'MyBatis ResultMap Collection + dynamic SQL (<choose>, <if>, <sql>) resolving N+1 problem (3 queries → 1)',
+          'Dual JWT tokens: Access (24h) + Refresh (72h), BCrypt password encoding, Spring Security RBAC (USER/ADMIN)',
+          'Custom JwtFilter (OncePerRequestFilter): token parsing → expiry validation → account suspension check → SecurityContext setup',
+          '40+ ErrorCode enum + 18 custom exceptions + @RestControllerAdvice GlobalExceptionHandler → consistent JSON error responses',
+          'Denormalized TB_LIKE_COUNT table for optimized like count reads (eliminating COUNT(*))',
+          'Soft Delete + Restore pattern: STATUS column-based deletion/recovery with admin restore support',
+          'Dual pagination: offset-based (boards with RowBounds) + cursor-based (feed infinite scroll)',
+          'AWS S3 file uploads: folder separation by type (profile/board/notice), unique filenames (Eco_timestamp_uuid)',
+          'Admin dashboard: post/comment/member management, report handling, notice CRUD, statistics API',
+          'External news API integration (environment keyword-based news search)',
+          'Oracle DB 13+ table schema design (members, boards, comments, likes, bookmarks, attachments, reports, tokens)',
         ],
       },
     },
     category: 'Web',
-    techs: ['React', 'Spring Boot', 'Oracle', 'AWS S3', 'MyBatis', 'JWT'],
-    github: 'https://github.com/wookidoki',
+    techs: ['Spring Boot 3.5', 'Java 21', 'MyBatis', 'Oracle', 'Spring Security', 'JWT', 'AWS S3', 'React 19', 'Tailwind CSS', 'Vite'],
+    github: 'https://github.com/wookidoki/earthwith-be',
     liveUrl: 'http://54.245.198.152:8080',
     period: '2025.09 ~ 2025.10',
   },
