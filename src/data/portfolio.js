@@ -1,8 +1,9 @@
 export const profile = {
   ko: {
     name: '이승욱',
-    greeting: '안녕하세요,',
-    nameSuffix: '입니다.',
+    greeting: '안녕하세요',
+    namePrefix: '풀스택 개발자 ',
+    nameSuffix: '입니다',
     title: '풀스택 웹 개발자 & 데이터 사이언티스트',
     about: `웹 개발과 데이터 분석, 두 가지 역량으로 비즈니스를 설계하는 개발자입니다.
 경영과 재무 회계를 공부하며 비즈니스에대한 이해도와 전공을 통해 데이터의 분석역량을 길렀으며 금융투자동아리 활동으로 다양한 산업의 도메인 지식을 갖추고있습니다.
@@ -10,14 +11,15 @@ export const profile = {
   },
   en: {
     name: 'Seungwook Lee',
-    greeting: "Hi, I'm",
-    nameSuffix: '.',
+    greeting: 'Hello',
+    namePrefix: "I'm Full-Stack Developer ",
+    nameSuffix: '',
     title: 'Full-Stack Web Developer & Data Scientist',
     about: `A developer who designs business solutions with both web development and data analysis.
 Studying business, finance, and accounting built my understanding of business, while my major honed my data analysis capabilities. Through the finance investment club, I gained diverse industry domain knowledge.
 With AWS full-stack web development training, I have broad technical capabilities from service planning and ML/AI modeling to development with React and Spring Boot.`,
   },
-  keywords: ['React', 'Spring Boot', 'Data Science', 'NLP', 'Python'],
+  keywords: ['React', 'Java', 'Spring', 'Python', 'Oracle SQL', 'AWS'],
 };
 
 export const education = [

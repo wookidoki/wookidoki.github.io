@@ -11,10 +11,8 @@ export default function Hero() {
       <div className={styles.content}>
         <p className={styles.greeting}>{t.greeting}</p>
         <h1 className={styles.name}>
-          <span className={styles.nameKo}>{t.name}</span>
-          {t.nameSuffix}
+          {t.namePrefix}<span className={styles.nameKo}>{t.name}</span>{t.nameSuffix}
         </h1>
-        <p className={styles.title}>{t.title}</p>
         <div className={styles.keywords}>
           {profile.keywords.map((kw) => (
             <span key={kw} className={styles.tag}>{kw}</span>
