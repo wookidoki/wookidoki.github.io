@@ -7,7 +7,7 @@ export const profile = {
     title: '풀스택 웹 개발자 & 데이터 사이언티스트',
     about: `웹 개발과 데이터 분석, 두 가지 역량으로 비즈니스를 설계하는 개발자입니다.
 경영과 재무 회계를 공부하며 비즈니스에대한 이해도와 전공을 통해 데이터의 분석역량을 길렀으며 금융투자동아리 활동으로 다양한 산업의 도메인 지식을 갖추고있습니다.
-또한 AWS 기반 풀스택 웹 개발 과정을 수료하며, 서비스 기획에서 ML/AL 기반 모델링과 React·Spring Boot를 이용한 개발까지 폭넓은 기술 역량을 보유하고 있습니다.`,
+또한 AWS 기반 풀스택 웹 개발 과정을 수료하며, 서비스 기획에서 ML/AL 기반 모델링과 React·Spring Boot를 이용한 개발 그리고 AWS, Docker 를 이용한 배포까지 폭넓은 기술 역량을 보유하고 있습니다.`,
   },
   en: {
     name: 'Seungwook Lee',
@@ -93,7 +93,7 @@ export const githubUsername = 'wookidoki';
 export const projects = [
   {
     id: 1,
-    title: 'Within',
+    title: 'Earth:in',
     ko: {
       subtitle: '경기도 환경 탐험 게이미피케이션 웹앱',
       description: '경기도 27개 시군구 100여 개 환경 명소를 게이미피케이션으로 탐험하는 웹 플랫폼입니다. 카테고리(자연/수자원/생태/문화/스포츠)·지역별 필터링, 실시간 대기질 데이터 분석·시각화, 스탬프 수집·배지·레벨 시스템, Google OAuth 인증, 관리자 대시보드(일별 가입 추이·인기 명소 통계)까지 1인 풀스택 개발. 경기기후 플랫폼 경진대회 최우수상.',
@@ -150,7 +150,7 @@ This decision led to the evaluation of "intuitive and universally accessible," w
     },
     category: 'Web',
     techs: ['React 19', 'Zustand', 'Styled Components', 'Node.js', 'Express', 'PostgreSQL', 'Google Maps API', 'Google OAuth', 'Docker', 'Nginx', 'AWS EC2/S3'],
-    github: 'https://github.com/wookidoki/within-eco',
+    github: 'https://github.com/wookidoki/earth-in',
     liveUrl: 'http://44.251.87.125',
     period: '2025.10 ~ 2025.12',
   },
