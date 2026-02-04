@@ -5,8 +5,8 @@ export const profile = {
     nameSuffix: '입니다.',
     title: '풀스택 웹 개발자 & 데이터 사이언티스트',
     about: `웹 개발과 데이터 분석, 두 가지 역량으로 비즈니스를 설계하는 개발자입니다.
-경영정보학 전공과 금융투자 동아리 RICH 6년 활동(교육부장·매크로팀장·해외주식팀장)을 통해 회계, 재무, 마케팅 등 다양한 도메인 지식을 갖추었습니다.
-KH정보교육원에서 AWS 기반 풀스택 웹 개발 과정을 수료하며, React·Spring Boot 서비스 개발부터 BERT·LDA 기반 NLP 연구까지 폭넓은 기술 역량을 보유하고 있습니다.`,
+경영과 재무 회계를 공부하며 비즈니스에대한 이해도와 전공을 통해 데이터의 분석역량을 길렀으며 금융투자동아리 활동으로 다양한 산업의 도메인 지식을 갖추고있습니다.
+또한 AWS 기반 풀스택 웹 개발 과정을 수료하며, 서비스 기획에서 ML/AL 기반 모델링과 React·Spring Boot를 이용한 개발까지 폭넓은 기술 역량을 보유하고 있습니다.`,
   },
   en: {
     name: 'Seungwook Lee',
@@ -14,8 +14,8 @@ KH정보교육원에서 AWS 기반 풀스택 웹 개발 과정을 수료하며, 
     nameSuffix: '.',
     title: 'Full-Stack Web Developer & Data Scientist',
     about: `A developer who designs business solutions with both web development and data analysis.
-Through my MIS major and 6 years in the finance investment club RICH (Education Director, Macro Team Lead, Int'l Stocks Team Lead), I bring diverse domain knowledge in accounting, finance, and marketing.
-With full-stack training at KH Institute, I have strong capabilities from React & Spring Boot services to NLP research with BERT and LDA.`,
+Studying business, finance, and accounting built my understanding of business, while my major honed my data analysis capabilities. Through the finance investment club, I gained diverse industry domain knowledge.
+With AWS full-stack web development training, I have broad technical capabilities from service planning and ML/AI modeling to development with React and Spring Boot.`,
   },
   keywords: ['React', 'Spring Boot', 'Data Science', 'NLP', 'Python'],
 };
@@ -253,67 +253,78 @@ Exception handling uses 40+ ErrorCode enums and 18+ custom exception classes wit
       },
     },
     category: 'Web',
-    techs: ['React', 'Zustand', 'Framer Motion'],
-    github: 'https://github.com/wookidoki',
+    techs: ['React 18', 'Zustand', 'Framer Motion', 'Styled Components', 'Axios', 'React Router'],
+    github: 'https://github.com/wookidoki/final-front',
     period: '2025.08 ~ 2025.09',
   },
   {
     id: 4,
     title: 'Steam Review Analysis',
     ko: {
-      subtitle: 'Steam 리뷰 감성 분석',
-      description: '4만 건 이상의 Steam 리뷰를 수집하여 BERT 기반 감성 분석과 패치 전후 키워드 변화를 정량적으로 측정한 프로젝트입니다.',
+      subtitle: 'Steam 리뷰 패치 영향 분석 (71,196건 · 30개 게임)',
+      description: '30개 게임의 71,196건 Steam 리뷰를 6개월간 수집하고, BERT 감성 분석 + 7종 통계 검정으로 33개 패치의 유저 감성 영향을 정량 측정한 프로젝트입니다. 버그 수정(+0.54pp)과 대형 업데이트(-6.53pp)의 효과 차이를 p=0.0065, Cohen\'s d=1.107로 검증했습니다.',
       detail: {
-        overview: 'Steam 게임 리뷰 데이터를 대규모로 수집하고, 자연어 처리 기법을 활용해 유저 감성을 분석한 데이터 사이언스 프로젝트입니다. 게임 업데이트가 유저 감정에 미치는 영향을 정량적으로 측정하는 분석 시스템을 구축했습니다.',
-        background: '초기에는 "추천했지만 부정적인 리뷰를 남긴 유저(Concerned)"가 가장 건설적인 피드백을 줄 것이라는 가설을 세우고 4-Cluster 모델을 구축했습니다. 그러나 해당 유저군의 97%가 밈이나 풍자성 리뷰라는 사실을 데이터 검증 과정에서 발견하고, 기존 분석 프레임워크를 전면 폐기했습니다. 이후 "패치 전후 키워드 변화 측정"으로 방향을 전환하여, 버그 수정 패치는 긍정률을 높이지만 대형 콘텐츠 업데이트는 오히려 유저 피로도를 높여 긍정률을 하락시킨다는 역설적 인사이트를 도출했습니다.',
-        role: '1인 데이터 분석 (수집 / 전처리 / 모델링 / 시각화)',
+        overview: `30개 게임(FPS·RPG·인디·멀티·시뮬레이션·논란작)에서 71,196건의 Steam 리뷰를 6개월간(2025.08~2026.01) 수집하고, BERT 다국어 감성 분석 모델로 긍정/부정/중립을 분류한 뒤, 33개 패치가 유저 감성에 미치는 영향을 7종 통계 검정으로 정량 분석한 데이터 사이언스 프로젝트입니다.
+4-Cluster 유저 세분화(Devoted/Concerned/Betrayed/Churned), 패치 유형별 긍정률 변화 비교, 타깃 키워드 감소율 분석, 패치 빈도-감성 추세 상관분석까지 다층적 분석을 수행했습니다.`,
+        background: `초기에는 "추천했지만 부정 리뷰를 남긴 유저(Concerned)"가 가장 건설적인 피드백을 줄 것이라는 가설로 4-Cluster 모델을 구축했습니다. 그러나 데이터 검증 과정에서 해당 유저군 대부분이 밈·풍자성 리뷰라는 사실을 발견하고 기존 프레임워크를 전면 폐기했습니다.
+이후 "패치 유형별 유저 감성 변화 측정"으로 방향을 전환했습니다. ±21일 윈도우로 패치 전후 긍정률을 비교하고, Two-Proportion Z-Test로 개별 패치 유의성을, Mann-Whitney U Test로 버그 수정 vs 대형 업데이트 그룹 차이를, Wilcoxon Signed-Rank Test로 대형 업데이트의 체계적 부정 효과를 검증했습니다.
+핵심 발견: 버그 수정 17건은 평균 +0.54pp, 대형 업데이트 10건은 평균 -6.53pp로, 두 그룹 차이가 p=0.0065(Mann-Whitney U), Cohen's d=1.107(대효과)로 통계적으로 매우 유의했습니다. 개별 패치 중 Hunt: Showdown Update 2.6은 -17.78pp(p<0.001)로 최대 부정 영향, Sea of Thieves Patch 3.5.3은 +15.81pp(p<0.001)로 최대 긍정 영향을 기록했습니다.
+또한 타깃 키워드 감소율 분석에서 79개 패치-키워드 쌍 중 52%가 감소했으나, 이항 검정 결과 p=0.27로 우연 수준과 유의한 차이가 없음을 투명하게 보고했습니다.`,
+        role: '1인 분석 (데이터 수집 / BERT 감성 분류 / 통계 검정 / 시각화 / 보고서)',
         highlights: [
-          '4만 건 이상 Steam API 리뷰 데이터 수집 및 전처리',
-          'BERT 기반 감성 분류 모델 구축 및 검증',
-          '가설 검증 실패 → 분석 방향 전환의 유연한 의사결정',
-          '패치 유형별 긍정률 변화 통계 검정 (t-test, chi-square)',
-          '데이터 기반 역설적 인사이트 도출: "큰 업데이트 ≠ 높은 만족도"',
+          'Steam API 기반 71,196건 리뷰 수집 (30개 게임, 6개월, 월 500건/게임 목표)',
+          'BERT 다국어 모델(nlptown/bert-base-multilingual-uncased-sentiment) 5점 척도 감성 분류',
+          '4-Cluster 유저 세분화 모델: Devoted/Concerned/Betrayed/Churned → 가설 실패 시 즉시 폐기·방향 전환',
+          '7종 통계 검정: Z-Test, Mann-Whitney U, Wilcoxon, Chi-Squared, Cohen\'s d, Bootstrap CI(5,000회), Spearman',
+          '핵심 결과: 버그 수정(+0.54pp) vs 대형 업데이트(-6.53pp), p=0.0065, Cohen\'s d=1.107(대효과)',
+          '33개 패치 개별 분석: 14개(42%) 통계적 유의, 최대 -17.78pp ~ +15.81pp 범위',
+          'Wilcoxon 검정으로 대형 업데이트의 체계적 부정 효과 확인 (p=0.0059)',
+          '타깃 키워드 79쌍 분석: 52% 감소했으나 이항 검정 p=0.27 → 유의하지 않음을 투명하게 보고',
+          '패치 빈도-감성 추세 상관: Spearman p=0.29 → 패치 횟수 ≠ 감성 개선을 정직하게 보고',
+          'Bootstrap 95% CI: 대형 업데이트 [-10.41, -2.86]pp → 신뢰 구간이 0을 포함하지 않아 견고한 결과',
         ],
       },
     },
     en: {
-      subtitle: 'Steam Review Sentiment Analysis',
-      description: 'Collected 40,000+ Steam reviews to perform BERT-based sentiment analysis and quantitatively measure keyword changes before/after game patches.',
+      subtitle: 'Steam Review Patch Impact Analysis (71,196 reviews · 30 games)',
+      description: 'Collected 71,196 Steam reviews across 30 games over 6 months, using BERT sentiment analysis + 7 statistical tests to quantify the impact of 33 patches on player sentiment. Verified bugfix (+0.54pp) vs major update (-6.53pp) effect difference with p=0.0065, Cohen\'s d=1.107.',
       detail: {
-        overview: 'A data science project that collected large-scale Steam game review data and analyzed user sentiment using NLP techniques. Built an analysis system to quantitatively measure how game updates affect user emotions.',
-        background: 'Initially hypothesized that "Concerned" users (positive recommendation but negative review) would provide the most constructive feedback. However, data validation revealed 97% were memes or satirical reviews. Pivoted to measuring keyword changes before/after patches, discovering that bug-fix patches increase positive rates while major content updates paradoxically decrease them due to user fatigue.',
-        role: 'Solo Data Analyst (Collection / Preprocessing / Modeling / Visualization)',
+        overview: `Collected 71,196 Steam reviews from 30 games (FPS, RPG, indie, multiplayer, simulation, controversial) over 6 months (Aug 2025 - Jan 2026), classified sentiment using a multilingual BERT model, then quantitatively analyzed the impact of 33 patches on player sentiment with 7 statistical tests.
+Performed multi-layered analysis including 4-Cluster user segmentation, patch type comparison, target keyword reduction, and patch frequency-sentiment correlation.`,
+        background: `Initially built a 4-Cluster model hypothesizing "Concerned" users (recommended but negative sentiment) would provide constructive feedback. Data validation revealed most were satirical/meme reviews, so the entire framework was scrapped.
+Pivoted to "patch type sentiment impact measurement." Compared positive rates ±21 days around patches using Z-Tests for individual patches, Mann-Whitney U for bugfix vs major update groups, and Wilcoxon for systematic negative effects.
+Key finding: Bugfix patches (n=17) averaged +0.54pp while major updates (n=10) averaged -6.53pp — difference significant at p=0.0065 (Mann-Whitney U), Cohen's d=1.107 (large effect). Hunt: Showdown Update 2.6 recorded the worst impact (-17.78pp, p<0.001), while Sea of Thieves Patch 3.5.3 recorded the best (+15.81pp, p<0.001).
+Transparently reported that target keyword reduction (52% of 79 pairs) was not significant vs chance (binomial p=0.27), and patch frequency-sentiment correlation was not significant (Spearman p=0.29).`,
+        role: 'Solo Analyst (Data Collection / BERT Sentiment / Statistical Testing / Visualization / Report)',
         highlights: [
-          '40,000+ review data collection via Steam API',
-          'BERT-based sentiment classification model',
-          'Flexible decision-making: hypothesis failure → pivot',
-          'Statistical testing by patch type (t-test, chi-square)',
-          'Paradoxical insight: "Big updates ≠ Higher satisfaction"',
+          '71,196 reviews via Steam API (30 games, 6 months, 500 reviews/game/month target)',
+          'Multilingual BERT model (nlptown/bert-base-multilingual-uncased-sentiment) 5-point sentiment classification',
+          '4-Cluster user segmentation: Devoted/Concerned/Betrayed/Churned → scrapped on hypothesis failure',
+          '7 statistical tests: Z-Test, Mann-Whitney U, Wilcoxon, Chi-Squared, Cohen\'s d, Bootstrap CI (5,000 samples), Spearman',
+          'Key result: Bugfix (+0.54pp) vs Major update (-6.53pp), p=0.0065, Cohen\'s d=1.107 (large effect)',
+          '33 individual patches analyzed: 14 (42%) statistically significant, range -17.78pp to +15.81pp',
+          'Wilcoxon test confirming systematic negative effect of major updates (p=0.0059)',
+          'Target keyword analysis: 52% of 79 pairs reduced but binomial p=0.27 → transparently reported as non-significant',
+          'Patch frequency-sentiment correlation: Spearman p=0.29 → honestly reported as non-significant',
+          'Bootstrap 95% CI for major updates: [-10.41, -2.86]pp → robust result excluding zero',
         ],
       },
     },
     category: 'Data Science',
-    techs: ['Python', 'BERT', 'SciPy', 'Pandas', 'Steam API'],
-    github: 'https://github.com/wookidoki',
-    period: '2025.04 ~ 2025.06',
+    techs: ['Python', 'BERT', 'SciPy', 'Pandas', 'Bootstrap', 'Steam API'],
+    github: 'https://github.com/wookidoki/steam-review-analysis',
+    period: '2025.08 ~ 2026.01',
     chartData: {
       positiveRate: {
-        labels: ['패치 전', '버그 수정 후', '밸런스 패치 후', '대형 업데이트 후'],
-        labelsEn: ['Before Patch', 'After Bug Fix', 'After Balance Patch', 'After Major Update'],
-        data: [62, 78, 68, 51],
-        label: '긍정률 변화 (%)',
-        labelEn: 'Positive Rate Change (%)',
-      },
-      sentimentDist: {
-        labels: ['긍정', '부정', '중립', '풍자/밈'],
-        labelsEn: ['Positive', 'Negative', 'Neutral', 'Satirical/Meme'],
-        data: [45, 22, 18, 15],
-        label: '리뷰 감성 분포 (%)',
-        labelEn: 'Sentiment Distribution (%)',
+        labels: ['버그 수정 (17건)', '대형 업데이트 (10건)'],
+        labelsEn: ['Bugfix (n=17)', 'Major Update (n=10)'],
+        data: [0.54, -6.53],
+        label: '평균 긍정률 변화 (pp)',
+        labelEn: 'Mean Positive Rate Change (pp)',
       },
       statTest: {
-        labels: { ko: ['버그 수정 (t-test)', '밸런스 패치 (t-test)', '대형 업데이트 (t-test)', 'Concerned 유저 χ² 검정'], en: ['Bug Fix (t-test)', 'Balance Patch (t-test)', 'Major Update (t-test)', 'Concerned User χ² test'] },
-        data: [0.003, 0.041, 0.001, 0.0001],
+        labels: { ko: ['버그vs대형 (Mann-Whitney)', '대형 업데이트 (Wilcoxon)', 'Hunt Update 2.6 (Z-test)', 'Cities Hotfix (Z-test)'], en: ['Bug vs Major (Mann-Whitney)', 'Major Updates (Wilcoxon)', 'Hunt Update 2.6 (Z-test)', 'Cities Hotfix (Z-test)'] },
+        data: [0.0065, 0.0059, 0.001, 0.014],
         label: { ko: 'p-value (유의수준 0.05)', en: 'p-value (α = 0.05)' },
       },
     },

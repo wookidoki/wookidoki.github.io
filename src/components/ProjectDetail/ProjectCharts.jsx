@@ -57,7 +57,7 @@ export default function ProjectCharts({ chartData, lang }) {
               datasets: [{
                 label: lang === 'ko' ? d.label : d.labelEn,
                 data: d.data,
-                backgroundColor: d.data.map((v) => v >= 70 ? '#10b981' : v >= 55 ? '#f59e0b' : '#ef4444'),
+                backgroundColor: d.data.map((v) => v > 0 ? '#10b981' : v === 0 ? '#f59e0b' : '#ef4444'),
                 borderRadius: 6,
               }],
             }}
