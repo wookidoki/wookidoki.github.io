@@ -14,12 +14,12 @@
   letter-spacing: -0.5px;
 }
 
-/* 상단: 사진 + 자기소개 */
+/* 상단: 사진 + 자기소개 (가로 정렬) */
 .top {
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: 40px;
-  align-items: start;
+  align-items: center;
   margin-bottom: 56px;
 }
 
@@ -43,7 +43,15 @@
   white-space: pre-line;
 }
 
-/* 학력 / 경력 / 자격 블록 */
+/* 학력 + 경력 2분할 */
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+/* 자격 / 수상 블록 */
 .sections {
   display: flex;
   flex-direction: column;
@@ -183,6 +191,11 @@
   .photo {
     width: 160px;
     height: 210px;
+  }
+
+  .twoCol {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .certGrid {

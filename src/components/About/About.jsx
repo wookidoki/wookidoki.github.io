@@ -30,8 +30,8 @@ export default function About() {
           </div>
         </div>
 
-        <div className={styles.sections}>
-          {/* 학력 */}
+        {/* 학력 + 경력 2분할 */}
+        <div className={styles.twoCol}>
           <div className={styles.block}>
             <h3 className={styles.blockTitle}>{l.education}</h3>
             <div className={styles.timeline}>
@@ -48,7 +48,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* 경력 */}
           <div className={styles.block}>
             <h3 className={styles.blockTitle}>{l.career}</h3>
             <div className={styles.timeline}>
@@ -65,8 +64,10 @@ export default function About() {
               ))}
             </div>
           </div>
+        </div>
 
-          {/* 자격 / 수상 */}
+        {/* 자격 / 수상 */}
+        <div className={styles.sections}>
           <div className={styles.block}>
             <h3 className={styles.blockTitle}>{l.cert}</h3>
             <div className={styles.certGrid}>

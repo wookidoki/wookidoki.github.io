@@ -78,24 +78,26 @@ export const sectionTitles = {
 };
 
 export const skills = [
-  { category: 'Frontend', items: [{ name: 'React', level: 90 }, { name: 'Vite', level: 85 }, { name: 'Styled Components', level: 80 }, { name: 'Tailwind CSS', level: 75 }, { name: 'Zustand', level: 80 }, { name: 'Google Maps API', level: 70 }] },
-  { category: 'Backend', items: [{ name: 'Spring Boot', level: 85 }, { name: 'Node.js / Express', level: 80 }, { name: 'JPA', level: 80 }, { name: 'MyBatis', level: 75 }, { name: 'JWT', level: 80 }, { name: 'Spring Security', level: 75 }] },
-  { category: 'Database', items: [{ name: 'PostgreSQL', level: 80 }, { name: 'Oracle', level: 75 }] },
-  { category: 'Data Science', items: [{ name: 'Python', level: 90 }, { name: 'PyTorch', level: 80 }, { name: 'TensorFlow', level: 75 }, { name: 'BERT / SBERT', level: 80 }, { name: 'scikit-learn', level: 85 }, { name: 'Pandas', level: 90 }] },
-  { category: 'NLP', items: [{ name: 'KoNLPy', level: 80 }, { name: 'Gensim (LDA)', level: 75 }, { name: 'TF-IDF', level: 85 }, { name: 'NLTK', level: 75 }, { name: 'spaCy', level: 70 }] },
-  { category: 'Infra / Tools', items: [{ name: 'Docker', level: 80 }, { name: 'AWS (EC2, S3)', level: 75 }, { name: 'Nginx', level: 70 }, { name: 'Git', level: 90 }, { name: 'GitHub Actions', level: 75 }] },
+  { category: 'Frontend', items: ['React', 'Vite', 'Styled Components', 'Tailwind CSS', 'Zustand', 'Google Maps API'] },
+  { category: 'Backend', items: ['Spring Boot', 'Node.js / Express', 'MyBatis', 'JPA', 'JWT', 'Spring Security'] },
+  { category: 'Database', items: ['PostgreSQL', 'Oracle'] },
+  { category: 'Data Science', items: ['Python', 'PyTorch', 'TensorFlow', 'BERT / SBERT', 'scikit-learn', 'Pandas'] },
+  { category: 'NLP', items: ['KoNLPy', 'Gensim (LDA)', 'TF-IDF', 'NLTK', 'spaCy'] },
+  { category: 'Infra / Tools', items: ['Docker', 'AWS (EC2, S3)', 'Nginx', 'Git', 'GitHub Actions'] },
 ];
+
+export const githubUsername = 'wookidoki';
 
 export const projects = [
   {
     id: 1,
-    title: 'Within Eco',
+    title: 'Within',
     ko: {
       subtitle: '경기도 환경 탐험 게이미피케이션 웹앱',
-      description: '경기도 27개 시군구 100여 개 환경 명소를 게이미피케이션으로 탐험하는 웹 플랫폼입니다. 스탬프 수집·배지·레벨 시스템, Google OAuth 인증, 대기질/기후 API 연동, 관리자 대시보드까지 1인 풀스택 개발. 경기기후 플랫폼 경진대회 최우수상.',
+      description: '경기도 27개 시군구 100여 개 환경 명소를 게이미피케이션으로 탐험하는 웹 플랫폼입니다. 카테고리(자연/수자원/생태/문화/스포츠)·지역별 필터링, 실시간 대기질 데이터 분석·시각화, 스탬프 수집·배지·레벨 시스템, Google OAuth 인증, 관리자 대시보드(일별 가입 추이·인기 명소 통계)까지 1인 풀스택 개발. 경기기후 플랫폼 경진대회 최우수상.',
       detail: {
         overview: `경기도 27개 시군구의 100여 개 환경 명소(자연, 수자원, 생태, 문화, 스포츠 5개 카테고리)를 게이미피케이션 방식으로 탐험하는 공공 서비스 웹 플랫폼입니다.
-사용자는 Google Maps 기반 인터랙티브 지도에서 명소를 탐색하고, 방문 시 스탬프를 수집하며, XP·레벨·배지(15종 이상)를 획득합니다. 댓글·사진 업로드·좋아요 등 소셜 기능과 실시간 대기질/기후 데이터 연동까지 포함한 종합 서비스입니다.
+사용자는 카테고리·지역별 다중 필터링과 Google Maps 기반 인터랙티브 지도에서 명소를 탐색하고, 방문 시 스탬프를 수집하며, XP·레벨·배지(15종 이상)를 획득합니다. 실시간 대기질(AQI) 데이터와 기후 정보를 분석·시각화하고, 관리자 대시보드에서 일별 가입 추이·인기 명소 랭킹·방문 통계 등을 데이터 기반으로 모니터링할 수 있습니다. 댓글·사진 업로드·좋아요 등 소셜 기능까지 포함한 종합 서비스입니다.
 1인 풀스택 개발로 기획, React 프론트엔드, Express 백엔드, PostgreSQL DB 설계, Docker 컨테이너화, AWS EC2 배포까지 전 과정을 수행했습니다.`,
         background: `경기도 기후환경정책과의 공모전에 참가하여, "기후 데이터를 시민이 직접 체험하게 만드는 서비스"를 기획했습니다.
 초기에는 Three.js 기반 3D 지구본 시각화를 구현하기 시작했으나, 개발 중간 점검에서 모바일 로딩 속도 저하와 저사양 기기 구동 불가 문제를 확인했습니다. 화려한 기술 시연보다 "누구나 빠르게 접근 가능한 공공 서비스"라는 본질이 우선이라 판단하고, 며칠간 작성한 3D 코드를 전면 폐기했습니다. 이후 Google Maps API + 게이미피케이션이라는 새로운 방향으로 전환하여, 확보된 리소스를 마커 클러스터링, 배지 시스템, 소셜 기능에 집중 투자했습니다.
@@ -103,15 +105,15 @@ export const projects = [
         role: '1인 풀스택 개발 (기획 / 프론트엔드 / 백엔드 / DB 설계 / 인프라 / 배포)',
         highlights: [
           'Google Maps API + 마커 클러스터링으로 100여 개 명소 인터랙티브 지도 구현',
+          '카테고리(자연/수자원/생태/문화/스포츠) · 지역(27개 시군구) 다중 필터링 + 키워드 검색 기능',
+          '실시간 대기질(AQI) API 연동 + 기후 데이터 분석·시각화 (수치 색상 구분, 단계별 안내)',
+          '관리자 대시보드: 일별 가입 추이 차트, 인기 명소 랭킹, 방문 통계 집계·분석, 유저 관리',
           '게이미피케이션 엔진: 스탬프 수집, XP/레벨 시스템, 15종 이상 배지 (방문 횟수, 카테고리 마스터, 지역 탐험, 연속 방문 스트릭 등)',
           'Google OAuth 2.0 인증 + 커스텀 JWT 세션 관리 (168시간 만료, DB 검증)',
           '소셜 기능: 명소별 댓글(페이지네이션), 사진 업로드(5MB, S3/로컬 이중 지원), 좋아요',
           'PostgreSQL 10개 테이블 설계: UUID PK, JSONB 컬럼, 자동 타임스탬프 트리거, 캐스케이드 삭제',
           'Zustand persist 미들웨어로 게임 상태 로컬 저장 + 5초 디바운스 클라우드 동기화',
-          '관리자 대시보드: 유저 관리, 일별 가입 추이, 인기 명소 랭킹, 방문 이력 모니터링',
-          '실시간 대기질 API + 기후 데이터 연동으로 환경 정보 제공',
           'Docker Compose 3-tier 아키텍처 (Nginx 리버스 프록시 + Express + PostgreSQL) + 헬스체크',
-          'Vitest + JSDOM 기반 유닛 테스트 (Zustand 스토어 테스트)',
           'Three.js 3D → Google Maps 2D 전환: 모바일 성능과 서비스 본질 우선의 기술적 판단',
           '경기기후 플랫폼 서비스 개발 경진대회 최우수상 수상',
         ],
@@ -119,10 +121,10 @@ export const projects = [
     },
     en: {
       subtitle: 'Gyeonggi-do Eco-Exploration Gamification Web App',
-      description: 'A gamification web platform for exploring 100+ environmental spots across 27 Gyeonggi-do districts. Features stamp collection, badges, leveling, Google OAuth, air quality/climate API integration, and admin dashboard. Solo full-stack development. Grand Prize winner.',
+      description: 'A gamification web platform for exploring 100+ environmental spots across 27 Gyeonggi-do districts. Features category/region multi-filtering, real-time air quality data analysis & visualization, stamp collection, badges, leveling, Google OAuth, admin dashboard with signup trends & popular spot statistics. Solo full-stack development. Grand Prize winner.',
       detail: {
         overview: `A public service web platform where citizens explore 100+ environmental spots (nature, water, ecology, culture, sports) across 27 Gyeonggi-do districts through gamification.
-Users navigate an interactive Google Maps-based map, collect stamps by visiting spots, and earn XP, levels, and badges (15+ types). Includes social features (comments, photo uploads, likes) and real-time air quality/climate data integration.
+Users filter spots by category and region, navigate an interactive Google Maps-based map, collect stamps by visiting, and earn XP, levels, and badges (15+ types). Real-time air quality (AQI) data analysis and climate information visualization, admin dashboard with daily signup trends, popular spot rankings, and visit statistics monitoring. Includes social features (comments, photo uploads, likes).
 Solo full-stack development covering planning, React frontend, Express backend, PostgreSQL schema design, Docker containerization, and AWS EC2 deployment.`,
         background: `Developed for the Gyeonggi-do Climate & Environment Policy Division competition with the concept of "making climate data something citizens directly experience."
 Initially implemented Three.js 3D globe visualization, but mid-development review revealed mobile loading issues and low-spec device incompatibility. Prioritizing accessible public service over flashy tech demos, I scrapped days of 3D code and pivoted to Google Maps API + gamification. Redirected resources into marker clustering, badge systems, and social features.
@@ -130,15 +132,15 @@ This decision led to the evaluation of "intuitive and universally accessible," w
         role: 'Solo Full-Stack Developer (Planning / Frontend / Backend / DB Design / Infra / Deployment)',
         highlights: [
           'Google Maps API + marker clustering for 100+ interactive spot markers',
+          'Category (nature/water/ecology/culture/sports) · region (27 districts) multi-filtering + keyword search',
+          'Real-time AQI API integration + climate data analysis & visualization (color-coded levels, stage guidance)',
+          'Admin dashboard: daily signup trend charts, popular spot rankings, visit statistics aggregation & analysis, user management',
           'Gamification engine: stamp collection, XP/level system, 15+ badges (visit count, category mastery, regional exploration, streak challenges)',
           'Google OAuth 2.0 + custom JWT session management (168h expiry, DB validation)',
           'Social features: paginated comments, photo uploads (5MB, S3/local dual support), likes',
           'PostgreSQL 10-table schema: UUID PKs, JSONB columns, auto-timestamp triggers, cascade deletes',
           'Zustand persist middleware for local game state + 5s debounced cloud sync',
-          'Admin dashboard: user management, daily signup trends, popular spot rankings, visit monitoring',
-          'Real-time air quality API + climate data integration',
           'Docker Compose 3-tier architecture (Nginx reverse proxy + Express + PostgreSQL) with health checks',
-          'Vitest + JSDOM unit testing for Zustand store validation',
           'Three.js 3D → Google Maps 2D pivot: prioritizing mobile performance and service accessibility',
           'Grand Prize at Gyeonggi Climate Platform Development Competition',
         ],
