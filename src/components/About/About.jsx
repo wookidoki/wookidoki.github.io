@@ -1,5 +1,6 @@
 import { useLang } from '../../context/LanguageContext';
 import { profile, education, career, certifications, sectionTitles } from '../../data/portfolio';
+import profileImg from '../../data/imgs/leeseongwook.jpg';
 import styles from './About.module.css';
 
 export default function About() {
@@ -22,7 +23,7 @@ export default function About() {
 
         <div className={styles.top}>
           <div className={styles.photoWrap}>
-            <img src="/images/profile.jpg" alt="이승욱 프로필" className={styles.photo} />
+            <img src={profileImg} alt="이승욱 프로필" className={styles.photo} />
           </div>
           <div className={styles.intro}>
             <p className={styles.bio}>{t.about}</p>

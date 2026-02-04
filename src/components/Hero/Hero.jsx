@@ -11,7 +11,7 @@ export default function Hero() {
       <div className={styles.content}>
         <p className={styles.greeting}>{t.greeting}</p>
         <h1 className={styles.name}>
-          <span className={styles.highlight}>{t.name}</span>
+          <span className={styles.nameKo}>{t.name}</span>
           {t.nameSuffix}
         </h1>
         <p className={styles.title}>{t.title}</p>
