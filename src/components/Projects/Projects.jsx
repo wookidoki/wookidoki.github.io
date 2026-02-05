@@ -4,6 +4,42 @@ import { useLang } from '../../context/LanguageContext';
 import { projects, sectionTitles, projectsFilter, detailLabels } from '../../data/portfolio';
 import styles from './Projects.module.css';
 
+// 스크린샷 URL 생성 (microlink API)
+function getScreenshotUrl(project) {
+  const targetUrl = project.liveUrl || project.github;
+  if (!targetUrl) return null;
+  return `https://api.microlink.io/?url=${encodeURIComponent(targetUrl)}&screenshot=true&meta=false&embed=screenshot.url`;
+}
+
+// 프로젝트 이미지 컴포넌트
+function ProjectImage({ project }) {
+  const [imgSrc, setImgSrc] = useState(() => getScreenshotUrl(project));
+  const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState(false);
+
+  if (!imgSrc || error) {
+    return (
+      <div className={styles.imgPlaceholder}>
+        <span className={styles.imgIcon}>{project.category === 'Web' ? '🌐' : project.category === 'Data Science' ? '📊' : '🔬'}</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.imgWrap}>
+      {!loaded && <div className={styles.imgLoading} />}
+      <img
+        src={imgSrc}
+        alt={project.title}
+        className={`${styles.img} ${loaded ? styles.imgLoaded : ''}`}
+        onLoad={() => setLoaded(true)}
+        onError={() => setError(true)}
+        loading="lazy"
+      />
+    </div>
+  );
+}
+
 const categoryKeys = ['all', 'Web', 'Data Science', 'Research'];
 
 export default function Projects() {
@@ -42,6 +78,7 @@ export default function Projects() {
               tabIndex={0}
               onKeyDown={(e) => e.key === 'Enter' && navigate(`/project/${project.id}`)}
             >
+              <ProjectImage project={project} />
               <div className={styles.cardBody}>
                 <span className={styles.category}>
                   {filterLabels[project.category]}
