@@ -7,6 +7,7 @@ import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
 import ProjectDetail from './components/ProjectDetail/ProjectDetail';
+import Resume from './components/Resume/Resume';
 import useScrollSpy from './hooks/useScrollSpy';
 
 function MainPage() {
@@ -32,6 +33,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<MainPage />} />
       <Route path="/project/:id" element={<ProjectDetail />} />
+      <Route path="/resume" element={<Resume />} />
     </Routes>
   );
 }
