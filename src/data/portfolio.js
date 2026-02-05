@@ -2,7 +2,7 @@ export const profile = {
   ko: {
     name: '이승욱',
     greeting: '안녕하세요',
-    namePrefix: '풀스택 개발자 ',
+    namePrefix: '개발자 ',
     nameSuffix: '입니다',
     title: '풀스택 웹 개발자 & 데이터 사이언티스트',
     about: `웹 개발과 데이터 분석, 두 가지 역량으로 비즈니스를 설계하는 개발자입니다.
@@ -12,7 +12,7 @@ export const profile = {
   en: {
     name: 'Seungwook Lee',
     greeting: 'Hello',
-    namePrefix: "I'm Full-Stack Developer ",
+    namePrefix: "I'm Developer ",
     nameSuffix: '',
     title: 'Full-Stack Web Developer & Data Scientist',
     about: `A developer who designs business solutions with both web development and data analysis.
