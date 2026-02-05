@@ -152,6 +152,7 @@ This decision led to the evaluation of "intuitive and universally accessible," w
     techs: ['React 19', 'Zustand', 'Styled Components', 'Node.js', 'Express', 'PostgreSQL', 'Google Maps API', 'Google OAuth', 'Docker', 'Nginx', 'AWS EC2/S3'],
     github: 'https://github.com/wookidoki/earth-in',
     liveUrl: 'http://44.251.87.125',
+    thumbnail: '/screenshots/1-earth-in.jpg',
     period: '2025.10 ~ 2025.12',
   },
   {
@@ -221,6 +222,7 @@ Exception handling uses 40+ ErrorCode enums and 18+ custom exception classes wit
     techs: ['Spring Boot 3.5', 'Java 21', 'MyBatis', 'Oracle', 'Spring Security', 'JWT', 'AWS S3', 'React 19', 'Tailwind CSS', 'Vite'],
     github: 'https://github.com/wookidoki/earthwith-be',
     liveUrl: 'http://54.245.198.152:8080',
+    thumbnail: '/screenshots/2-earthwith.jpg',
     period: '2025.09 ~ 2025.10',
   },
   {
@@ -279,6 +281,7 @@ Code-split 25+ pages with React.lazy, isolate errors with ErrorBoundary, and sup
     category: 'Web',
     techs: ['React 18', 'Vite 5', 'Zustand', 'Styled Components', 'Framer Motion', 'React RND', 'Axios', 'React Router 6'],
     github: 'https://github.com/wookidoki/final-front',
+    thumbnail: '/screenshots/3-replay.jpg',
     period: '2025.08 ~ 2025.09',
   },
   {
@@ -337,6 +340,7 @@ Transparently reported that target keyword reduction (52% of 79 pairs) was not s
     category: 'Data Science',
     techs: ['Python', 'BERT', 'SciPy', 'Pandas', 'Bootstrap', 'Steam API'],
     github: 'https://github.com/wookidoki/steam-review-analysis',
+    thumbnail: '/screenshots/4-steam.jpg',
     period: '2025.08 ~ 2026.01',
     chartData: {
       positiveRate: {
@@ -409,6 +413,7 @@ Cross-validated results against EU Ethics Guidelines, OECD AI Principles, and UN
     category: 'Research',
     techs: ['SBERT', 'LDA', 'TF-IDF', 'NLTK', 'spaCy', 'Gensim', 'scikit-learn', 'Python'],
     github: 'https://github.com/wookidoki/AI-Ethics-Evolution-2017-2024',
+    thumbnail: '/screenshots/5-ai-ethics.jpg',
     period: '2024.09 ~ 2024.12',
     chartData: {
       topicTrend: {
@@ -478,6 +483,7 @@ For GAN, experienced adversarial training instability firsthand, implementing dy
     category: 'Data Science',
     techs: ['PyTorch', 'TensorFlow', 'CNN', 'DCGAN', 'CIFAR-10', 'MNIST', 'scikit-learn', 'Python'],
     github: 'https://github.com/wookidoki/image-analysis-deep-learning',
+    thumbnail: '/screenshots/6-image-dl.jpg',
     period: '2025.03 ~ 2025.05',
     chartData: {
       accuracy: {
@@ -550,6 +556,7 @@ Key findings: Attitude dominates across all groups (30s β=0.368 highest; 60+ β
     category: 'Research',
     techs: ['확장 TPB', '다중 회귀분석', 'Python', 'Chart.js', 'Plotly.js', 'GitHub Pages'],
     github: 'https://github.com/wookidoki/survey-environmental-ethics-2024',
+    thumbnail: '/screenshots/7-survey.jpg',
     period: '2024.03 ~ 2024.06',
     chartData: {
       regression: {
@@ -617,6 +624,7 @@ Generated 121 analysis visualizations and provided reproducible code via Jupyter
     category: 'Research',
     techs: ['SBERT', 'KoNLPy (Komoran)', 'TF-IDF', 'Gensim', 'scikit-learn', 'Python'],
     github: 'https://github.com/wookidoki/Living-Resources-SDG-Analysis',
+    thumbnail: '/screenshots/8-sdg.jpg',
     period: '2024.03 ~ 2024.08',
     chartData: {
       similarity: {

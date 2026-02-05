@@ -4,18 +4,17 @@ import { useLang } from '../../context/LanguageContext';
 import { projects, sectionTitles, projectsFilter, detailLabels } from '../../data/portfolio';
 import styles from './Projects.module.css';
 
-// 스크린샷 URL 생성 (microlink API)
-function getScreenshotUrl(project) {
-  const targetUrl = project.liveUrl || project.github;
-  if (!targetUrl) return null;
-  return `https://api.microlink.io/?url=${encodeURIComponent(targetUrl)}&screenshot=true&meta=false&embed=screenshot.url`;
-}
-
-// 프로젝트 이미지 컴포넌트
+// 프로젝트 이미지 컴포넌트 (저장된 썸네일 우선, 없으면 API 폴백)
 function ProjectImage({ project }) {
-  const [imgSrc, setImgSrc] = useState(() => getScreenshotUrl(project));
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
+
+  // 저장된 썸네일이 있으면 사용
+  const imgSrc = project.thumbnail
+    ? project.thumbnail
+    : project.liveUrl || project.github
+      ? `https://api.microlink.io/?url=${encodeURIComponent(project.liveUrl || project.github)}&screenshot=true&meta=false&embed=screenshot.url`
+      : null;
 
   if (!imgSrc || error) {
     return (
