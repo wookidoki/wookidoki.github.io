@@ -1,0 +1,147 @@
+.section {
+  padding: 100px 0;
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+
+.title {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.more {
+  margin-left: auto;
+  font-size: var(--fs-sm);
+  color: var(--color-secondary);
+  transition: color 0.2s var(--ease);
+}
+
+.more:hover {
+  color: var(--color-primary);
+}
+
+.workList {
+  border-top: 1px solid var(--color-border);
+}
+
+.workItem {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 8px;
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.2s var(--ease), padding-left 0.2s var(--ease);
+}
+
+.workItem:hover {
+  background: var(--color-bg-alt);
+  padding-left: 20px;
+}
+
+.workCat {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+
+.workTitle {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.workSub {
+  display: none;
+}
+
+.workArrow {
+  font-size: 1.3rem;
+  color: var(--color-faint);
+  transition: transform 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.workItem:hover .workArrow {
+  transform: translateX(4px);
+  color: var(--color-primary);
+}
+
+.cta {
+  padding: 100px 0;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+}
+
+.ctaLinks {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctaBtn,
+.ctaBtnGhost {
+  padding: 13px 28px;
+  border-radius: var(--radius);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  transition: opacity 0.2s var(--ease), background 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.ctaBtn {
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.ctaBtn:hover {
+  opacity: 0.85;
+}
+
+.ctaBtnGhost {
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-primary);
+}
+
+.ctaBtnGhost:hover {
+  background: var(--color-bg-alt);
+}
+
+@media (max-width: 768px) {
+  .section,
+  .cta {
+    padding: 72px 0;
+  }
+
+  .workItem {
+    grid-template-columns: 1fr auto;
+    gap: 8px 16px;
+  }
+
+  .workCat {
+    grid-column: 1 / -1;
+  }
+}

@@ -55,7 +55,6 @@ export default function Projects() {
   return (
     <section id="projects" className={styles.projects}>
       <div className={styles.inner}>
-        <h2 className={styles.heading}>{heading}</h2>
         <div className={styles.filters}>
           {categoryKeys.map((key) => (
             <button

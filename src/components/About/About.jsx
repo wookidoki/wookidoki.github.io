@@ -19,8 +19,6 @@ export default function About() {
   return (
     <section id="about" className={styles.about}>
       <div className={styles.inner}>
-        <h2 className={styles.heading}>{heading}</h2>
-
         <div className={styles.top}>
           <div className={styles.photoWrap}>
             <img src={profileImg} alt="이승욱 프로필" className={styles.photo} />

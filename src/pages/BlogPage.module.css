@@ -1,0 +1,10 @@
+.section {
+  padding: 80px 0 120px;
+}
+
+.empty {
+  color: var(--color-faint);
+  font-size: var(--fs-body);
+  text-align: center;
+  padding: 60px 0;
+}

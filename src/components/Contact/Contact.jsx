@@ -10,7 +10,6 @@ export default function Contact() {
   return (
     <section id="contact">
       <div className={styles.inner}>
-        <h2 className={styles.heading}>{heading}</h2>
         <p className={styles.subtitle}>{t.subtitle}</p>
         <div className={styles.links}>
           <a
@@ -47,9 +46,6 @@ export default function Contact() {
           </a>
         </div>
       </div>
-      <footer className={styles.footer}>
-        <p>&copy; 2025 {t.footer}</p>
-      </footer>
     </section>
   );
 }

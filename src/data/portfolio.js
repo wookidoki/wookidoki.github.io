@@ -84,8 +84,8 @@ export const certifications = [
 ];
 
 export const nav = {
-  ko: { links: [{ id: 'hero', label: '홈' }, { id: 'about', label: '소개' }, { id: 'skills', label: '기술' }, { id: 'projects', label: '프로젝트' }, { id: 'qna', label: '자기소개서' }, { id: 'contact', label: '연락처' }] },
-  en: { links: [{ id: 'hero', label: 'Home' }, { id: 'about', label: 'About' }, { id: 'skills', label: 'Skills' }, { id: 'projects', label: 'Projects' }, { id: 'qna', label: 'About Me' }, { id: 'contact', label: 'Contact' }] },
+  ko: { links: [{ to: '/', label: '홈' }, { to: '/about', label: '소개' }, { to: '/projects', label: '프로젝트' }, { to: '/blog', label: '블로그' }, { to: '/resume', label: '이력서' }, { to: '/contact', label: '연락처' }] },
+  en: { links: [{ to: '/', label: 'Home' }, { to: '/about', label: 'About' }, { to: '/projects', label: 'Projects' }, { to: '/blog', label: 'Blog' }, { to: '/resume', label: 'Resume' }, { to: '/contact', label: 'Contact' }] },
 };
 
 export const sectionTitles = {

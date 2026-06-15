@@ -1,38 +1,24 @@
 import { Routes, Route } from 'react-router-dom';
-import Nav from './components/Nav/Nav';
-import Hero from './components/Hero/Hero';
-import About from './components/About/About';
-import QnA from './components/QnA/QnA';
-import Skills from './components/Skills/Skills';
-import Projects from './components/Projects/Projects';
-import Contact from './components/Contact/Contact';
+import Layout from './components/layout/Layout';
+import Home from './pages/Home';
+import AboutPage from './pages/AboutPage';
+import ProjectsPage from './pages/ProjectsPage';
+import BlogPage from './pages/BlogPage';
+import ContactPage from './pages/ContactPage';
 import ProjectDetail from './components/ProjectDetail/ProjectDetail';
 import Resume from './components/Resume/Resume';
-import useScrollSpy from './hooks/useScrollSpy';
-
-function MainPage() {
-  const activeSection = useScrollSpy();
-
-  return (
-    <>
-      <Nav activeSection={activeSection} />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <QnA />
-        <Contact />
-      </main>
-    </>
-  );
-}
 
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<MainPage />} />
-      <Route path="/project/:id" element={<ProjectDetail />} />
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/project/:id" element={<ProjectDetail />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Route>
       <Route path="/resume" element={<Resume />} />
     </Routes>
   );
