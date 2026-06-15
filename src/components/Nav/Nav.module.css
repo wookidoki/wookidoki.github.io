@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   height: var(--nav-height);
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--color-bg-blur);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
@@ -79,8 +79,26 @@
 }
 
 .langBtn:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.themeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 30px;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  color: var(--color-secondary);
+  background: var(--color-bg);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.themeBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .hamburger {
@@ -122,7 +140,7 @@
     left: 0;
     right: 0;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--color-bg-blur);
     backdrop-filter: blur(12px);
     padding: 24px;
     gap: 20px;

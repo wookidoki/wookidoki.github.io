@@ -1,7 +1,7 @@
 /* 페이지 전체 */
 .page {
   min-height: 100vh;
-  background: #f0f0f0;
+  background: var(--color-bg-alt);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -27,18 +27,18 @@
 }
 
 .langBtn {
-  background: #fff;
-  color: #333;
-  border: 1px solid #ddd;
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
 }
 
 .langBtn:hover {
-  background: #f5f5f5;
+  background: var(--color-bg-alt);
 }
 
 .printBtn {
-  background: #2563eb;
-  color: #fff;
+  background: var(--color-accent);
+  color: var(--color-bg);
 }
 
 .printBtn:hover {
@@ -49,12 +49,12 @@
 .paper {
   width: 210mm;
   min-height: 297mm;
-  background: #fff;
+  background: var(--color-surface);
   padding: 15mm 20mm;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   font-size: 10pt;
   line-height: 1.5;
-  color: #222;
+  color: var(--color-primary);
 }
 
 /* 헤더 */
@@ -62,7 +62,7 @@
   text-align: center;
   margin-bottom: 20px;
   padding-bottom: 15px;
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid var(--color-primary);
 }
 
 .name {
@@ -74,12 +74,12 @@
 
 .contact {
   font-size: 9pt;
-  color: #555;
+  color: var(--color-secondary);
 }
 
 .sep {
   margin: 0 8px;
-  color: #ccc;
+  color: var(--color-border);
 }
 
 /* 섹션 */
@@ -92,17 +92,17 @@
   font-weight: 700;
   margin: 0 0 10px;
   padding-bottom: 4px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--color-border);
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #333;
+  color: var(--color-primary);
 }
 
 /* 자기소개 */
 .about {
   margin: 0;
   font-size: 9.5pt;
-  color: #444;
+  color: var(--color-secondary);
   text-align: justify;
   white-space: pre-line;
 }
@@ -121,20 +121,20 @@
 
 .tdPeriod {
   width: 130px;
-  color: #666;
+  color: var(--color-secondary);
   font-size: 8.5pt;
   white-space: nowrap;
 }
 
 .sub {
-  color: #666;
+  color: var(--color-secondary);
   font-weight: 400;
 }
 
 .desc {
   margin: 4px 0 0;
   font-size: 9pt;
-  color: #555;
+  color: var(--color-secondary);
 }
 
 /* 기술 스택 */
@@ -154,13 +154,13 @@
   width: 100px;
   font-weight: 600;
   font-size: 9pt;
-  color: #333;
+  color: var(--color-primary);
   flex-shrink: 0;
 }
 
 .skillItems {
   font-size: 9pt;
-  color: #555;
+  color: var(--color-secondary);
 }
 
 /* 프로젝트 */
@@ -172,7 +172,7 @@
 
 .projItem {
   padding-bottom: 10px;
-  border-bottom: 1px dotted #e5e5e5;
+  border-bottom: 1px dotted var(--color-border);
 }
 
 .projItem:last-child {
@@ -189,19 +189,19 @@
 
 .projPeriod {
   font-size: 8.5pt;
-  color: #888;
+  color: var(--color-faint);
 }
 
 .projDesc {
   margin: 0 0 4px;
   font-size: 9pt;
-  color: #555;
+  color: var(--color-secondary);
 }
 
 .projTechs {
   margin: 0;
   font-size: 8.5pt;
-  color: #777;
+  color: var(--color-faint);
 }
 
 /* 인쇄 스타일 */

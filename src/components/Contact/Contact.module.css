@@ -64,7 +64,7 @@
 
 .footer p {
   font-size: 0.8rem;
-  color: #aaa;
+  color: var(--color-faint);
 }
 
 @media (max-width: 640px) {

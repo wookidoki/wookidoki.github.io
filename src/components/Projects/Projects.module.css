@@ -39,12 +39,12 @@
 
 .filterActive {
   background: var(--color-accent);
-  color: #fff;
+  color: var(--color-bg);
   border-color: var(--color-accent);
 }
 
 .filterActive:hover {
-  color: #fff;
+  color: var(--color-bg);
 }
 
 .grid {
