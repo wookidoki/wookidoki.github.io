@@ -3,14 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="이승욱 - 개발자 포트폴리오" />
-    <title>이승욱 | Portfolio</title>
+    <meta name="description" content="이승욱 — EPC 도메인 IT 컨설턴트 · 풀스택 개발자. Oracle Primavera Unifier, Next.js, 데이터 분석." />
+    <title>이승욱 | IT 컨설턴트 · 풀스택 개발자</title>
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <!-- 다크모드 FOUC 방지: React 로드 전에 테마 선반영 -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
     <!-- GitHub Pages SPA redirect receiver -->
     <script>
       (function(l) {
@@ -22,8 +41,8 @@
         }
       }(window.location))
     </script>
-    <script type="module" crossorigin src="/assets/index-zdUHJ-E0.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Cr1Ot53F.css">
+    <script type="module" crossorigin src="/assets/index-BfrRYmyg.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-yyXhfDtr.css">
   </head>
   <body>
     <div id="root"></div>
