@@ -2,30 +2,30 @@ export const profile = {
   ko: {
     name: '이승욱',
     greeting: '안녕하세요',
-    namePrefix: '개발자 ',
+    namePrefix: 'IT 컨설턴트 ',
     nameSuffix: '입니다',
-    title: '풀스택 웹 개발자 & 데이터 사이언티스트',
-    about: `웹 개발과 데이터 분석, 두 가지 역량으로 비즈니스를 설계하는 개발자입니다.
-경영과 재무 회계를 공부하며 비즈니스에대한 이해도와 전공을 통해 데이터의 분석역량을 길렀으며 금융투자동아리 활동으로 다양한 산업의 도메인 지식을 갖추고있습니다.
-또한 AWS 기반 풀스택 웹 개발 과정을 수료하며, 서비스 기획에서 ML/AL 기반 모델링과 React·Spring Boot를 이용한 개발 그리고 AWS, Docker 를 이용한 배포까지 폭넓은 기술 역량을 보유하고 있습니다.`,
+    title: 'EPC 도메인 IT 컨설턴트 · 풀스택 개발자',
+    about: `비즈니스 이해와 기술 구현을 함께 갖춘 IT 컨설턴트입니다.
+동국대학교 경영정보학(MIS)을 전공하며 회계·재무·소비자학 등 도메인 지식을 쌓았고, 금융투자 동아리에서 6년간 데이터 기반 의사결정을 훈련했습니다. 이후 AWS 기반 풀스택 웹 개발 과정을 수료하며 React·Spring Boot·Next.js 개발 역량을 갖췄습니다.
+현재 SI 기업에서 EPC(설계·조달·시공) 도메인의 전자조달 플랫폼 풀스택 개발과 Oracle Primavera Unifier 운영·컨설팅을 함께 수행하고 있습니다. 요구사항을 시스템으로 옮기는 개발자를 넘어, 비즈니스를 설계하는 컨설턴트로 성장하는 것이 목표입니다.`,
   },
   en: {
     name: 'Seungwook Lee',
     greeting: 'Hello',
-    namePrefix: "I'm Developer ",
+    namePrefix: "I'm an IT Consultant, ",
     nameSuffix: '',
-    title: 'Full-Stack Web Developer & Data Scientist',
-    about: `A developer who designs business solutions with both web development and data analysis.
-Studying business, finance, and accounting built my understanding of business, while my major honed my data analysis capabilities. Through the finance investment club, I gained diverse industry domain knowledge.
-With AWS full-stack web development training, I have broad technical capabilities from service planning and ML/AI modeling to development with React and Spring Boot.`,
+    title: 'EPC Domain IT Consultant · Full-Stack Developer',
+    about: `An IT consultant who combines business understanding with technical implementation.
+I majored in Management Information Systems at Dongguk University, building domain knowledge in accounting, finance, and consumer studies, and trained in data-driven decision making over 6 years in a finance investment club. I then completed an AWS full-stack web development course, building capabilities in React, Spring Boot, and Next.js.
+I currently work at an SI firm, handling both full-stack development of an e-procurement platform and Oracle Primavera Unifier operations & consulting in the EPC (Engineering, Procurement, Construction) domain. My goal is to grow beyond a developer who translates requirements into systems, into a consultant who designs the business itself.`,
   },
-  keywords: ['React', 'Java', 'Spring', 'Python', 'Oracle SQL', 'AWS'],
+  keywords: ['Oracle Unifier', 'Next.js', 'TypeScript', 'PostgreSQL', 'Spring Boot', 'Python'],
 };
 
 export const education = [
   {
-    ko: { school: '동국대학교 (서울)', major: '경영정보학과', period: '2017.03 ~ 2025.12 (졸업예정)' },
-    en: { school: 'Dongguk University, Seoul', major: 'Management Information Systems', period: '2017.03 ~ 2025.12 (Expected)' },
+    ko: { school: '동국대학교 (서울)', major: '경영정보학과', period: '2017.03 ~ 2026.09 (졸업예정)' },
+    en: { school: 'Dongguk University, Seoul', major: 'Management Information Systems', period: '2017.03 ~ 2026.09 (Expected)' },
     gpa: '3.46 / 4.5',
   },
   {
@@ -35,6 +35,20 @@ export const education = [
 ];
 
 export const career = [
+  {
+    ko: {
+      company: '디티솔루션 (DT Solution)',
+      role: 'IT 컨설턴트 (정규직)',
+      period: '2026.03 ~ 재직 중',
+      description: 'EPC 도메인 SI 기업에서 대형 제조·플랜트 고객사의 전자조달 플랫폼(Next.js·TypeScript·PostgreSQL) 풀스택 개발과 Oracle Primavera Unifier 운영·컨설팅을 담당. 입사 1개월 차에 개인정보(PII) 암호화 시스템을 단독 설계·구현·운영 배포(서비스 레이어 무수정·기능 회귀 0)했고, 대용량 데이터 마이그레이션 파이프라인, REST API 연동 정의서, BI Publisher 보고서 서식 등 운영 과제를 수행.',
+    },
+    en: {
+      company: 'DT Solution',
+      role: 'IT Consultant (Full-time)',
+      period: '2026.03 ~ Present',
+      description: 'At an SI firm in the EPC domain, handling full-stack development of an e-procurement platform (Next.js, TypeScript, PostgreSQL) and Oracle Primavera Unifier operations & consulting for large manufacturing/plant clients. Within the first month, solo-designed, built, and production-deployed a PII encryption system (zero service-layer changes, zero functional regression), and delivered operational tasks including large-scale data migration pipelines, REST API integration specs, and BI Publisher report templates.',
+    },
+  },
   {
     ko: {
       company: '탑프로홀딩스',
@@ -53,8 +67,8 @@ export const career = [
 
 export const certifications = [
   {
-    ko: { name: 'KH정보교육원', detail: '프로젝트 기반 AWS 풀스택 웹 개발자 양성과정', period: '2025.07 ~ 2026.02 (수료 예정, 100% 출석)' },
-    en: { name: 'KH Information Education Institute', detail: 'Project-based AWS Full-Stack Web Developer Course', period: '2025.07 ~ 2026.02 (Expected, 100% Attendance)' },
+    ko: { name: 'KH정보교육원', detail: '프로젝트 기반 AWS 풀스택 웹 개발자 양성과정', period: '2025.07 ~ 2026.02 (수료, 100% 출석)' },
+    en: { name: 'KH Information Education Institute', detail: 'Project-based AWS Full-Stack Web Developer Course', period: '2025.07 ~ 2026.02 (Completed, 100% Attendance)' },
     type: 'training',
   },
   {
@@ -80,8 +94,9 @@ export const sectionTitles = {
 };
 
 export const skills = [
-  { category: 'Frontend', items: ['React', 'Vite', 'Styled Components', 'Tailwind CSS', 'Zustand', 'Google Maps API'] },
-  { category: 'Backend', items: ['Spring Boot', 'Node.js / Express', 'MyBatis', 'JPA', 'JWT', 'Spring Security'] },
+  { category: 'EPC / ERP Solution', items: ['Oracle Primavera Unifier', 'BP 설계 (uDesigner)', 'BI Publisher', 'REST API 연동', 'BIP 매크로', '데이터 마이그레이션'] },
+  { category: 'Frontend', items: ['React', 'Next.js (App Router)', 'TypeScript', 'Vite', 'Zustand', 'Styled Components'] },
+  { category: 'Backend', items: ['Spring Boot', 'Node.js / Express', 'Drizzle ORM', 'MyBatis', 'JWT', 'Spring Security'] },
   { category: 'Database', items: ['PostgreSQL', 'Oracle'] },
   { category: 'Data Science', items: ['Python', 'PyTorch', 'TensorFlow', 'BERT / SBERT', 'scikit-learn', 'Pandas'] },
   { category: 'NLP', items: ['KoNLPy', 'Gensim (LDA)', 'TF-IDF', 'NLTK', 'spaCy'] },
