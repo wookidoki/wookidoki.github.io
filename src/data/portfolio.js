@@ -107,6 +107,88 @@ export const githubUsername = 'wookidoki';
 
 export const projects = [
   {
+    id: 11,
+    title: 'PII 암호화 시스템',
+    ko: {
+      subtitle: '전자조달 플랫폼 30여 개 테이블 개인정보 무중단 암호화',
+      description: 'EPC 도메인 전자조달 플랫폼의 30여 개 테이블·약 100개 컬럼에 평문 저장된 개인정보를, 검색 기능을 유지(결정론적 암호화)하면서 폐쇄망에 무중단으로 암호화한 실무 프로젝트입니다. ORM 커스텀 타입으로 암호화를 데이터 계층에 격리해 서비스 코드 수정 0건·기능 회귀 0건을 달성했습니다.',
+      detail: {
+        overview: `현업 운영 중인 EPC 전자조달 플랫폼에서, 다수 테이블에 평문으로 저장돼 있던 개인정보(PII)를 암호화 솔루션으로 전환한 단독 프로젝트입니다. 검색 가능성·폐쇄망·무중단이라는 제약을 모두 만족해야 했습니다.`,
+        background: `핵심 의사결정은 "어떻게 적용하느냐"였습니다. 서비스 코드 22개 파일에 암호화 헬퍼를 일일이 호출하는 방식은 누락 위험과 유지보수 부담이 컸습니다. 대신 ORM의 커스텀 타입으로 암호화를 데이터 계층에 격리하는 구조를 설계해, 서비스 레이어를 한 줄도 고치지 않고 멱등성(중복 암호화 방지)까지 내장했습니다. 환경 충돌로 다섯 번 막혔지만 그때마다 작업일지에 문제와 해결을 기록하며 자급자족형 스키마로 풀어냈고, 암호문 식별 규칙은 왕복(round-trip) 테스트로 직접 검증했습니다.`,
+        role: '단독 설계 · 구현 · 운영 배포',
+        highlights: [
+          '30여 개 테이블·약 100개 컬럼 PII 암호화 전환',
+          '결정론적 암호화로 WHERE 검색 기능 유지',
+          'ORM 커스텀 타입으로 데이터 계층 격리 → 서비스 코드 수정 0건',
+          '멱등성 내장으로 중복 암호화 방지',
+          '폐쇄망 무중단 배포, 기능 회귀 0건',
+          '환경 충돌 시행착오·해결 과정 작업일지 문서화',
+        ],
+      },
+    },
+    en: {
+      subtitle: 'Zero-downtime PII encryption across 30+ tables of an e-procurement platform',
+      description: 'A solo project encrypting plaintext personal data across 30+ tables (~100 columns) of an EPC-domain e-procurement platform, while preserving search (deterministic encryption) and deploying to a closed network with zero downtime. Isolated encryption in the ORM data layer (custom type) to achieve zero service-code changes and zero functional regression.',
+      detail: {
+        overview: `A solo project migrating plaintext personal data (PII), stored across many tables of a live EPC e-procurement platform, to an encryption solution — satisfying searchability, closed-network, and zero-downtime constraints all at once.`,
+        background: `The key decision was "how to apply it." Calling an encryption helper across 22 service files individually risked omissions and heavy maintenance. Instead I designed an approach isolating encryption in the ORM data layer (custom type), touching not a single line of service code, with idempotency (no double-encryption) built in. Environment conflicts blocked me five times, but each time I logged the problem and fix in my work journal and solved it with a self-contained schema, verifying the ciphertext-identification rule myself via round-trip testing.`,
+        role: 'Solo Design · Implementation · Production Deployment',
+        highlights: [
+          'PII encryption across 30+ tables, ~100 columns',
+          'Deterministic encryption preserving WHERE search',
+          'Data-layer isolation via ORM custom type → zero service-code changes',
+          'Built-in idempotency preventing double-encryption',
+          'Zero-downtime closed-network deployment, zero functional regression',
+          'Documented environment-conflict troubleshooting in work journal',
+        ],
+      },
+    },
+    category: 'Professional',
+    techs: ['Next.js', 'TypeScript', 'Drizzle ORM', 'PostgreSQL', '암호화 SDK'],
+    period: '2026.04 ~ 2026.05',
+  },
+  {
+    id: 12,
+    title: 'Oracle Unifier 운영·컨설팅',
+    ko: {
+      subtitle: '건설·플랜트 PMIS 운영 및 고객 요구사항(VOC) 대응',
+      description: '건설·플랜트 고객사의 Oracle Primavera Unifier(PMIS) 운영을 담당하며, 비즈니스 프로세스(BP) 설계, 대용량 데이터 마이그레이션, REST API 연동 정의, BI Publisher 보고서 서식 등 고객 대상 산출물을 생산하는 실무입니다. 요구사항 분석부터 운영 지원까지 한 사이클을 책임집니다.',
+      detail: {
+        overview: `Oracle Primavera Unifier 기반 PMIS의 운영을 담당하며 건설·플랜트 고객사의 요청(VOC)에 대응합니다. 단순 구현을 넘어 데이터로 더 나은 프로세스를 제안하는 컨설팅 산출물을 만듭니다.`,
+        background: `약 150만 행 규모의 작업일보 데이터를 정규화·매핑·검증하는 Excel→Unifier 마이그레이션 파이프라인을 구축했고, 출입인원 조회 등 REST API 연동 정의서를 작성·발신했으며, BI Publisher 보고서 서식을 매크로로 변경했습니다. 비즈니스 프로세스(BP)를 설계하고 데이터 구조·연동 방식을 제안하는 등, 고객 상담 → 요구사항 정의 → 설계·구현 → 운영 지원의 전 사이클을 수행합니다.`,
+        role: '운영 지원 · 컨설팅',
+        highlights: [
+          'Oracle Primavera Unifier(PMIS) 운영 및 VOC 대응',
+          '약 150만 행 데이터 마이그레이션 파이프라인 구축',
+          'REST API 연동 정의서 작성·발신',
+          'BI Publisher 보고서 서식 매크로 개발',
+          '비즈니스 프로세스(BP) 설계 및 데이터 구조 제안',
+          '요구사항 분석 → 운영 지원까지 전 사이클 책임',
+        ],
+      },
+    },
+    en: {
+      subtitle: 'Construction/plant PMIS operations and client request (VOC) handling',
+      description: 'Operating an Oracle Primavera Unifier (PMIS) deployment for construction/plant clients — producing client-facing deliverables including business process (BP) design, large-scale data migration, REST API integration specs, and BI Publisher report templates. Owning the full cycle from requirements analysis to operational support.',
+      detail: {
+        overview: `Operating a PMIS built on Oracle Primavera Unifier and responding to construction/plant client requests (VOCs). Beyond mere implementation, I produce consulting deliverables that propose better processes through data.`,
+        background: `I built an Excel→Unifier migration pipeline that normalizes, maps, and validates ~1.5M rows of daily work-log data; authored and delivered REST API integration specs (e.g., access-personnel queries); and modified BI Publisher report templates via macros. Designing business processes (BP) and proposing data structures and integration methods, I cover the full cycle: client consultation → requirement definition → design/implementation → operational support.`,
+        role: 'Operational Support · Consulting',
+        highlights: [
+          'Oracle Primavera Unifier (PMIS) operations and VOC handling',
+          'Built a ~1.5M-row data migration pipeline',
+          'Authored and delivered REST API integration specs',
+          'Developed BI Publisher report templates via macros',
+          'Business process (BP) design and data-structure proposals',
+          'Owned full cycle from requirements analysis to operational support',
+        ],
+      },
+    },
+    category: 'Professional',
+    techs: ['Oracle Primavera Unifier', 'BP 설계', 'REST API', 'BI Publisher', '데이터 마이그레이션'],
+    period: '2026.05 ~ 재직 중',
+  },
+  {
     id: 1,
     title: 'Earth:in',
     ko: {
@@ -761,8 +843,8 @@ export const contactData = {
 };
 
 export const projectsFilter = {
-  ko: { all: '전체', Web: '웹', 'Data Science': '데이터 사이언스', Research: '연구' },
-  en: { all: 'All', Web: 'Web', 'Data Science': 'Data Science', Research: 'Research' },
+  ko: { all: '전체', Professional: '실무', Web: '웹', 'Data Science': '데이터 사이언스', Research: '연구' },
+  en: { all: 'All', Professional: 'Professional', Web: 'Web', 'Data Science': 'Data Science', Research: 'Research' },
 };
 
 export const detailLabels = {

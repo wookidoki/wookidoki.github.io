@@ -19,7 +19,7 @@ function ProjectImage({ project }) {
   if (!imgSrc || error) {
     return (
       <div className={styles.imgPlaceholder}>
-        <span className={styles.imgIcon}>{project.category === 'Web' ? '🌐' : project.category === 'Data Science' ? '📊' : '🔬'}</span>
+        <span className={styles.imgIcon}>{project.category === 'Web' ? '🌐' : project.category === 'Data Science' ? '📊' : project.category === 'Professional' ? '💼' : '🔬'}</span>
       </div>
     );
   }
@@ -39,7 +39,7 @@ function ProjectImage({ project }) {
   );
 }
 
-const categoryKeys = ['all', 'Web', 'Data Science', 'Research'];
+const categoryKeys = ['all', 'Professional', 'Web', 'Data Science', 'Research'];
 
 export default function Projects() {
   const { lang } = useLang();
