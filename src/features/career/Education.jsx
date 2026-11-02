@@ -1,20 +1,18 @@
 import Section from '../../components/Section.jsx';
 import Reveal from '../../components/Reveal.jsx';
-import { awards, education } from '../../data/profile.js';
+import { awards, education } from '../../data/career.js';
 import styles from './Education.module.css';
 
-function Rows({ title, rows }) {
+function List({ title, rows }) {
   return (
-    <Reveal className={styles.block}>
+    <Reveal className={styles.col}>
       <h3 className={styles.h}>{title}</h3>
       <ul className={styles.list}>
         {rows.map((r) => (
           <li key={r.name} className={styles.row}>
             <span className={styles.period}>{r.period}</span>
-            <span>
-              <strong className={styles.name}>{r.name}</strong>
-              <span className={styles.detail}>{r.detail}</span>
-            </span>
+            <strong className={styles.name}>{r.name}</strong>
+            <span className={styles.detail}>{r.detail}</span>
           </li>
         ))}
       </ul>
@@ -24,10 +22,10 @@ function Rows({ title, rows }) {
 
 export default function Education() {
   return (
-    <Section id="education" index={4} title="학력 · 수상">
+    <Section id="education" eyebrow="EDUCATION · AWARDS" title="학력 · 수상">
       <div className={styles.cols}>
-        <Rows title="학력 · 교육" rows={education.map((e) => ({ name: e.school, detail: e.detail, period: e.period }))} />
-        <Rows title="수상 · 자격" rows={awards.map((a) => ({ name: a.name, detail: a.org, period: a.period }))} />
+        <List title="학력 · 활동" rows={education} />
+        <List title="수상 · 자격" rows={awards} />
       </div>
     </Section>
   );

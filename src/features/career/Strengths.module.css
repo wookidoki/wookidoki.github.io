@@ -1,0 +1,93 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.card {
+  --mx: 50%;
+  --my: 0%;
+  position: relative;
+  padding: 28px 24px 24px;
+  border-radius: var(--radius);
+  background: radial-gradient(420px circle at var(--mx) var(--my), rgba(34, 227, 255, 0.1), transparent 45%),
+    var(--surface);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  transition: border-color 300ms var(--ease), transform 400ms var(--ease);
+}
+/* 테두리 그라데이션 빛 */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(260px circle at var(--mx) var(--my), var(--c1), var(--c2) 40%, transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 300ms var(--ease);
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+.card:hover::before {
+  opacity: 1;
+}
+.num {
+  font-family: var(--font-num);
+  font-size: 13px;
+  color: var(--mute);
+}
+.title {
+  margin: 36px 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.body {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--ink-2);
+}
+.tags {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tags li {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  color: var(--ink-2);
+}
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media print {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6pt;
+  }
+  .card {
+    padding: 8pt;
+    background: none;
+    break-inside: avoid;
+  }
+  .title {
+    margin: 4pt 0;
+    font-size: 11pt;
+  }
+}

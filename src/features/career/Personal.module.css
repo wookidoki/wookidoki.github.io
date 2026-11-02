@@ -1,0 +1,10 @@
+.card {
+  background: linear-gradient(160deg, rgba(123, 97, 255, 0.08), transparent 60%), var(--surface);
+}
+.link {
+  color: var(--c1);
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}

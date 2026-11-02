@@ -1,33 +1,51 @@
 .section {
-  padding-top: var(--space-9);
-  scroll-margin-top: 72px;
+  position: relative;
+  padding: clamp(96px, 12vw, 160px) 0 0;
+  scroll-margin-top: 40px;
+}
+.inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad);
 }
 .head {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-4);
-  padding-bottom: var(--space-4);
-  margin-bottom: var(--space-6);
-  border-bottom: var(--line-w) solid var(--ink);
+  margin-bottom: 56px;
 }
-.index {
+.eyebrow {
+  margin: 0 0 14px;
   font-family: var(--font-num);
   font-size: 13px;
-  color: var(--accent);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.22em;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .title {
   margin: 0;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-size: clamp(30px, 4.4vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+.lead {
+  max-width: 620px;
+  margin: 16px 0 0;
+  font-size: 17px;
+  color: var(--ink-2);
 }
 @media print {
   .section {
-    padding-top: 18pt;
-    break-inside: auto;
+    padding-top: 16pt;
   }
   .head {
     margin-bottom: 10pt;
+  }
+  .title {
+    font-size: 16pt;
+  }
+  .eyebrow {
+    color: #666;
+    background: none;
   }
 }

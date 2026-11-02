@@ -1,135 +1,130 @@
 .bar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: color-mix(in srgb, var(--bg) 82%, transparent);
-  backdrop-filter: saturate(1.4) blur(14px);
-  -webkit-backdrop-filter: saturate(1.4) blur(14px);
-  border-bottom: var(--line-w) solid var(--line);
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  transition: background 400ms var(--ease), border-color 400ms var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.scrolled {
+  background: rgba(4, 6, 11, 0.72);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  border-bottom-color: var(--line);
 }
 .inner {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 var(--space-5);
-  height: 60px;
+  padding: 0 var(--pad);
+  height: 68px;
   display: flex;
   align-items: center;
-  gap: var(--space-5);
+  gap: 32px;
 }
 .brand {
-  font-weight: 600;
-  text-decoration: none;
   display: flex;
-  align-items: baseline;
-  gap: var(--space-2);
-  white-space: nowrap;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  letter-spacing: -0.02em;
 }
-.brandSub {
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--mute);
+.mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  background: var(--grad);
+  box-shadow: var(--glow);
 }
-
-/* 세그먼트 버튼: 선택 표시가 미끄러지듯 이동 */
+.links {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.links a {
+  text-decoration: none;
+  transition: color 200ms var(--ease);
+}
+.links a:hover {
+  color: var(--ink);
+}
+.right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .seg {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 0 auto;
-  padding: 3px;
-  border: var(--line-w) solid var(--line);
+  padding: 4px;
   border-radius: 999px;
-  background: var(--bg-soft);
+  border: 1px solid var(--line-2);
+  background: rgba(255, 255, 255, 0.03);
 }
-.segBtn {
+.seg button {
   position: relative;
   z-index: 1;
   border: 0;
   background: none;
-  padding: 6px 18px;
+  color: var(--ink-2);
   font: inherit;
-  font-size: 14px;
-  color: var(--mute);
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 6px 16px;
   cursor: pointer;
   transition: color 300ms var(--ease);
 }
-.on {
-  color: var(--bg);
+.seg button.on {
+  color: #04060b;
 }
-.segThumb {
+.thumb {
   position: absolute;
-  top: 3px;
-  bottom: 3px;
-  left: 3px;
-  width: calc(50% - 3px);
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
   border-radius: 999px;
-  background: var(--ink);
-  transition: transform 420ms var(--ease);
+  background: var(--grad);
+  box-shadow: 0 0 24px rgba(34, 227, 255, 0.35);
+  transition: transform 460ms var(--ease);
 }
-.segThumb[data-pos='1'] {
+.thumb[data-pos='1'] {
   transform: translateX(100%);
 }
-
-.tools {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-.palettes {
-  display: flex;
-  gap: 6px;
-  margin-right: var(--space-2);
-}
-.chip {
-  display: flex;
-  padding: 3px;
-  border: var(--line-w) solid transparent;
-  border-radius: 999px;
-  background: none;
-  cursor: pointer;
-  transition: border-color 200ms var(--ease), transform 200ms var(--ease);
-}
-.chip:hover {
-  transform: translateY(-1px);
-}
-.chip i {
-  width: 10px;
-  height: 18px;
-}
-.chip i:first-child {
-  border-radius: 999px 0 0 999px;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
-}
-.chip i:last-child {
-  border-radius: 0 999px 999px 0;
-}
-.chipOn {
-  border-color: var(--ink);
-}
-.icon {
-  width: 34px;
-  height: 34px;
-  border: var(--line-w) solid var(--line);
-  border-radius: 999px;
+.pdf {
+  border: 1px solid var(--line-2);
   background: none;
   color: var(--ink);
-  font-size: 15px;
+  font: inherit;
+  font-family: var(--font-num);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 7px 14px;
+  border-radius: 999px;
   cursor: pointer;
-  transition: background 200ms var(--ease);
+  transition: border-color 200ms var(--ease), background 200ms var(--ease);
 }
-.icon:hover {
-  background: var(--bg-soft);
+.pdf:hover {
+  border-color: var(--c1);
+  background: rgba(34, 227, 255, 0.08);
 }
-@media (max-width: 720px) {
-  .inner {
-    padding: 0 var(--space-4);
-    gap: var(--space-3);
-  }
-  .brandSub,
-  .palettes {
+.progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--grad);
+  transform-origin: left;
+}
+@media (max-width: 860px) {
+  .links {
     display: none;
   }
-  .segBtn {
+  .seg button {
     padding: 6px 12px;
   }
 }
