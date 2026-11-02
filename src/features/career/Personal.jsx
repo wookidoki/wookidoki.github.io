@@ -27,7 +27,7 @@ export default function CardList({ id, eyebrow, title, items }) {
                 {p.link && (
                   <li>
                     <a href={p.link} target="_blank" rel="noreferrer" className={own.link}>
-                      GitHub ↗
+                      {p.linkLabel || 'GitHub'} ↗
                     </a>
                   </li>
                 )}

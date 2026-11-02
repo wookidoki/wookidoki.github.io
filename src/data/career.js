@@ -208,6 +208,8 @@ export const personal = [
       '미국 시장 데이터로 모델 확장 연구',
     ],
     stack: ['Python', 'pandas', 'LightGBM', 'FastAPI', 'SQLite', 'Next.js'],
+    link: 'https://quant-lab-eta.vercel.app',
+    linkLabel: '전략 소개 페이지',
   },
   {
     name: 'Earth:in (경기기후 플랫폼 경진대회 최우수상)',
