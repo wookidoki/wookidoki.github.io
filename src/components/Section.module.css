@@ -25,11 +25,10 @@
   width: 36px;
   height: 1px;
   background: var(--grad);
-  box-shadow: 0 0 10px var(--c1);
 }
 .title {
   margin: 0;
-  font-size: clamp(30px, 4.4vw, 52px);
+  font-size: clamp(28px, 3.6vw, 42px);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1.15;

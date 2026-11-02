@@ -6,7 +6,8 @@ import styles from './TopBar.module.css';
 const LINKS = [
   { id: 'strengths', label: '역량' },
   { id: 'experience', label: '경력' },
-  { id: 'personal', label: '개인 프로젝트' },
+  { id: 'personal', label: '프로젝트' },
+  { id: 'research', label: '연구' },
   { id: 'education', label: '학력' },
 ];
 

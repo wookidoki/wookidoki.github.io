@@ -17,7 +17,6 @@
   inset: 0;
   background: linear-gradient(180deg, var(--c1), var(--c2), var(--c3));
   transform-origin: top;
-  box-shadow: 0 0 16px var(--c1);
 }
 .company + .company {
   margin-top: 96px;
@@ -35,7 +34,7 @@
   border-radius: 50%;
   background: var(--bg);
   border: 2px solid var(--c1);
-  box-shadow: 0 0 0 6px rgba(34, 227, 255, 0.1), 0 0 18px var(--c1);
+  box-shadow: 0 0 0 5px rgba(34, 227, 255, 0.08);
 }
 .period {
   margin: 0;
@@ -75,18 +74,12 @@
   perspective: 1200px;
 }
 .project {
-  --mx: 50%;
-  --my: 0%;
-  --rx: 0deg;
-  --ry: 0deg;
   height: 100%;
-  transform: rotateX(var(--rx)) rotateY(var(--ry));
-  background: radial-gradient(500px circle at var(--mx) var(--my), rgba(123, 97, 255, 0.1), transparent 45%),
-    var(--surface);
+  background: var(--surface);
   padding: 26px 26px 22px;
   border-radius: var(--radius);
   border: 1px solid var(--line);
-  transition: border-color 300ms var(--ease), transform 200ms var(--ease);
+  transition: border-color 250ms var(--ease);
 }
 .project:hover {
   border-color: rgba(34, 227, 255, 0.35);

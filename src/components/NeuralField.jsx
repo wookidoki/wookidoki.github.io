@@ -3,9 +3,9 @@ import styles from './NeuralField.module.css';
 
 // 신경망처럼 이어지는 입자 배경. 마우스 근처 노드가 끌려오고 연결선이 밝아진다.
 // 화면 밖이거나 탭이 숨겨지면 멈춘다. 움직임 최소화 설정이면 한 장면만 그린다.
-const LINK_DIST = 150;
-const MOUSE_DIST = 220;
-const DENSITY = 14000; // 픽셀 면적당 노드 1개
+const LINK_DIST = 130;
+const MOUSE_DIST = 160;
+const DENSITY = 26000; // 픽셀 면적당 노드 1개
 
 export default function NeuralField() {
   const ref = useRef(null);
@@ -28,7 +28,7 @@ export default function NeuralField() {
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const n = Math.min(140, Math.max(40, Math.floor((w * h) / DENSITY)));
+      const n = Math.min(80, Math.max(28, Math.floor((w * h) / DENSITY)));
       nodes = Array.from({ length: n }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
@@ -52,8 +52,8 @@ export default function NeuralField() {
         const dy = mouse.y - p.y;
         const d = Math.hypot(dx, dy);
         if (d < MOUSE_DIST) {
-          p.vx += (dx / d) * 0.012;
-          p.vy += (dy / d) * 0.012;
+          p.vx += (dx / d) * 0.004;
+          p.vy += (dy / d) * 0.004;
         }
         p.vx *= 0.985;
         p.vy *= 0.985;
@@ -69,7 +69,7 @@ export default function NeuralField() {
           const d = Math.hypot(a.x - b.x, a.y - b.y);
           if (d < LINK_DIST) {
             const near = Math.hypot(mouse.x - a.x, mouse.y - a.y) < MOUSE_DIST;
-            ctx.strokeStyle = color((a.hue + b.hue) / 2, (1 - d / LINK_DIST) * (near ? 0.55 : 0.18));
+            ctx.strokeStyle = color((a.hue + b.hue) / 2, (1 - d / LINK_DIST) * (near ? 0.32 : 0.14));
             ctx.lineWidth = near ? 1 : 0.6;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -79,7 +79,7 @@ export default function NeuralField() {
         }
       }
       for (const p of nodes) {
-        ctx.fillStyle = color(p.hue, 0.9);
+        ctx.fillStyle = color(p.hue, 0.7);
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();

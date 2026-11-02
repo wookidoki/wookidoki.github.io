@@ -3,7 +3,6 @@ import Section from '../../components/Section.jsx';
 import Reveal from '../../components/Reveal.jsx';
 import { useSettings } from '../settings/SettingsContext.jsx';
 import { experience } from '../../data/career.js';
-import { tiltHandlers } from '../../hooks/useTilt.js';
 import styles from './Experience.module.css';
 
 const KIND = { dev: '개발', consult: '컨설팅', biz: '창업' };
@@ -33,7 +32,7 @@ function useLineProgress(ref) {
 function Project({ p, i }) {
   return (
     <Reveal as="article" delay={Math.min(i, 4) * 60} className={styles.pWrap}>
-      <div className={styles.project} {...tiltHandlers()}>
+      <div className={styles.project}>
       <header className={styles.pHead}>
         <span className={`${styles.kind} ${styles[p.kind]}`}>{KIND[p.kind]}</span>
         <h4 className={styles.pName}>{p.name}</h4>

@@ -1,7 +1,6 @@
 import Section from '../../components/Section.jsx';
 import Reveal from '../../components/Reveal.jsx';
 import { strengths } from '../../data/career.js';
-import { tiltHandlers } from '../../hooks/useTilt.js';
 import styles from './Strengths.module.css';
 
 export default function Strengths() {
@@ -10,7 +9,7 @@ export default function Strengths() {
       <div className={styles.grid}>
         {strengths.map((s, i) => (
           <Reveal key={s.key} delay={i * 90} className={styles.wrap}>
-            <div className={styles.card} {...tiltHandlers()}>
+            <div className={styles.card}>
               <span className={styles.num}>{String(i + 1).padStart(2, '0')}</span>
               <h3 className={styles.title}>{s.title}</h3>
               <p className={styles.body}>{s.body}</p>

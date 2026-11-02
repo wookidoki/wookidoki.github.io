@@ -1,11 +1,9 @@
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  filter: blur(6px);
-  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease), filter var(--dur) var(--ease);
+  transform: translateY(20px);
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
 .in {
   opacity: 1;
   transform: none;
-  filter: none;
 }

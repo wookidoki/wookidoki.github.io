@@ -4,47 +4,18 @@
   gap: 16px;
 }
 .wrap {
-  perspective: 900px;
+  height: 100%;
 }
 .card {
-  --mx: 50%;
-  --my: 0%;
-  --rx: 0deg;
-  --ry: 0deg;
-  position: relative;
   height: 100%;
-  padding: 28px 24px 24px;
+  padding: 26px 22px 22px;
   border-radius: var(--radius);
-  background: radial-gradient(420px circle at var(--mx) var(--my), rgba(34, 227, 255, 0.12), transparent 45%),
-    var(--surface);
+  background: var(--surface);
   border: 1px solid var(--line);
-  overflow: hidden;
-  transform: rotateX(var(--rx)) rotateY(var(--ry));
-  transform-style: preserve-3d;
-  transition: transform 200ms var(--ease), border-color 300ms var(--ease);
+  transition: border-color 250ms var(--ease);
 }
-/* 회전하는 그라데이션 테두리 (hover 때 선명해짐) */
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: conic-gradient(from var(--angle), transparent 0deg, var(--c1) 60deg, var(--c2) 120deg, transparent 180deg);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0.35;
-  animation: spin 6s linear infinite;
-  transition: opacity 300ms var(--ease);
-}
-.card:hover::before {
-  opacity: 1;
-}
-@keyframes spin {
-  to {
-    --angle: 360deg;
-  }
+.card:hover {
+  border-color: rgba(34, 227, 255, 0.35);
 }
 .num {
   font-family: var(--font-num);
@@ -52,8 +23,8 @@
   color: var(--mute);
 }
 .title {
-  margin: 36px 0 12px;
-  font-size: 20px;
+  margin: 28px 0 10px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.03em;
 }

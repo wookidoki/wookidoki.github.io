@@ -34,7 +34,6 @@
   height: 22px;
   border-radius: 7px;
   background: var(--grad);
-  box-shadow: var(--glow);
 }
 .links {
   display: flex;
@@ -88,7 +87,6 @@
   width: calc(50% - 4px);
   border-radius: 999px;
   background: var(--grad);
-  box-shadow: 0 0 24px rgba(34, 227, 255, 0.35);
   transition: transform 460ms var(--ease);
 }
 .thumb[data-pos='1'] {

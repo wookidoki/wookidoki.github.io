@@ -34,14 +34,14 @@ export const strengths = [
   {
     key: 'unifier',
     title: 'Oracle Primavera Unifier',
-    body: 'BP 설계(uDesigner), REST API 연동, BI Publisher 출력물, 데이터 뷰 리포트',
-    tags: ['uDesigner', 'REST API', 'BI Publisher', 'AWP'],
+    body: 'BP 설계(uDesigner), REST API 연동, BI Publisher 출력물, 업무 자동화 도구',
+    tags: ['uDesigner', 'REST API', 'BI Publisher', 'VBA'],
   },
   {
-    key: 'automation',
-    title: '업무 자동화',
-    body: '데이터 이관, 계정·권한 처리 도구, 엑셀 업무 도구(VBA) 개발',
-    tags: ['Python', 'PowerShell', 'VBA', 'Excel COM'],
+    key: 'ai',
+    title: 'AI · 데이터 모델링',
+    body: '머신러닝 주식 매매 모델 개발, 텍스트 마이닝·자연어 처리 연구(SBERT, LDA)',
+    tags: ['LightGBM', 'SBERT', 'LDA', 'pandas'],
   },
   {
     key: 'domain',
@@ -196,6 +196,20 @@ export const experience = [
 
 export const personal = [
   {
+    name: 'AI 주식 매매 모델 개발',
+    period: '2026.10 – 현재',
+    role: '1인 개발',
+    tasks: [
+      '국내 주식 10년치 일봉·수급·공시 데이터 수집 파이프라인 구축',
+      'LightGBM 종목 점수 모델 개발 (walk-forward 검증, 다중 모델 배깅)',
+      '매매 전략별 모델 결합 및 백테스트 엔진 개발 (종가 지정가, 시가 단타)',
+      '장 마감 후 자동 수집·점수 계산·신호 게시, 장 시작 모의 매매 자동 기록',
+      '시세 데이터 오류(대체거래소 체결 혼입) 발견 및 정규장 종가 복원',
+      '미국 시장 데이터로 모델 확장 연구',
+    ],
+    stack: ['Python', 'pandas', 'LightGBM', 'FastAPI', 'SQLite', 'Next.js'],
+  },
+  {
     name: 'Earth:in (경기기후 플랫폼 경진대회 최우수상)',
     period: '2025.10 – 2025.12',
     role: '1인 풀스택',
@@ -203,19 +217,60 @@ export const personal = [
     stack: ['React', 'Express', 'PostgreSQL', 'Docker', 'AWS'],
     link: 'https://github.com/wookidoki/earth-in',
   },
+];
+
+// 연구 (대학 연구·교수 의뢰). 논문 게재 정보는 확인되면 venue에 추가.
+export const research = [
   {
-    name: '국내 주식 데이터 파이프라인 · 백테스트',
-    period: '2026.10 – 현재',
-    role: '1인 개발',
-    tasks: ['국내 주식 10년치 일봉 수집 및 백테스트', '일일 수집·분석·대시보드 게시 자동화 (FastAPI)', '시세 데이터 오류 발견 및 보정'],
-    stack: ['Python', 'LightGBM', 'FastAPI', 'SQLite', 'Next.js'],
+    name: '가정과 교육과정 생활자원 영역의 UN SDGs 반영도 분석',
+    period: '2024.03 – 2024.08',
+    role: '교수 의뢰 연구 · 분석 단독',
+    tasks: [
+      '2015·2022 개정 교육과정 교과서(각 5권)와 UN SDGs 17개 목표 텍스트 비교',
+      'TF-IDF 키워드 점수와 SBERT 의미 유사도 이중 분석',
+      '개정 교육과정에서 지속가능 소비·생산 내용 증가와 보완 필요 영역 도출',
+    ],
+    stack: ['Python', 'KoNLPy', 'TF-IDF', 'SBERT'],
+    link: 'https://github.com/wookidoki/Living-Resources-SDG-Analysis',
+  },
+  {
+    name: '소비자 교육과정 변화 분석',
+    period: '2024',
+    role: '분석 단독',
+    tasks: ['2015·2022·2024 교육과정 문서 키워드·토픽 변화 분석', '가정교육 기준서 비교, 교육과정과 UN SDGs 연관성 분석'],
+    stack: ['Python', 'KoNLPy', 'LDA', 'SBERT'],
+    link: 'https://github.com/wookidoki/consumer-education-research',
+  },
+  {
+    name: 'AI 윤리 담론 변화 분석 (2017–2024)',
+    period: '2024.09 – 2024.12',
+    role: '학부 연구 · 1인',
+    tasks: [
+      '4개 기관 AI 윤리 보고서 13건 수집, 공정성·환경·위협·규제 4개 범주 시계열 분석',
+      'SBERT 문장 유사도와 LDA 토픽 모델링으로 범주별 비중 변화 정량화',
+      'EU·OECD·UNESCO 윤리 가이드라인으로 결과 교차 검증',
+    ],
+    stack: ['Python', 'SBERT', 'LDA', 'spaCy'],
+    link: 'https://github.com/wookidoki/AI-Ethics-Evolution-2017-2024',
+  },
+  {
+    name: '환경윤리 의식·행동 분석 (전국 설문)',
+    period: '2024.03 – 2024.06',
+    role: '1인 연구',
+    tasks: [
+      '2024 전국 환경의식조사 데이터로 확장 계획행동이론(TPB) 모델 회귀 분석',
+      '연령·성별 등 하위 집단별 모델 비교, 의식-행동 세그먼트 분류',
+      '결과 대시보드 제작 (GitHub Pages)',
+    ],
+    stack: ['Python', 'statsmodels', 'Plotly'],
+    link: 'https://github.com/wookidoki/survey-environmental-ethics-2024',
   },
 ];
 
 export const skills = [
   'Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Drizzle ORM', 'Three.js',
   'Oracle Primavera Unifier', 'uDesigner', 'REST API', 'BI Publisher', 'Python', 'pandas',
-  'PowerShell', 'VBA', 'Excel COM', 'LightGBM', 'FastAPI', 'Docker', 'Nginx', 'Vercel', 'GitHub Actions',
+  'PowerShell', 'VBA', 'Excel COM', 'LightGBM', 'SBERT', 'FastAPI', 'Docker', 'Nginx', 'Vercel', 'GitHub Actions',
 ];
 
 export const education = [
