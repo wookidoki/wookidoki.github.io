@@ -1,5 +1,6 @@
 .card {
-  background: linear-gradient(160deg, rgba(123, 97, 255, 0.08), transparent 60%), var(--surface);
+  background: radial-gradient(500px circle at var(--mx) var(--my), rgba(255, 79, 216, 0.1), transparent 45%),
+    linear-gradient(160deg, rgba(123, 97, 255, 0.08), transparent 60%), var(--surface);
 }
 .link {
   color: var(--c1);

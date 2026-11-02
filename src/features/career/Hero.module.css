@@ -81,38 +81,39 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  font-size: clamp(40px, 7.2vw, 92px);
   font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.05em;
 }
-.title span {
+.line1 {
   display: block;
+  font-size: clamp(28px, 4.2vw, 56px);
+  line-height: 1.15;
+  color: var(--ink-2);
   animation: rise 1000ms var(--ease) both;
 }
-.title span:nth-child(2) {
-  animation-delay: 120ms;
-  padding-bottom: 0.08em;
+.line2 {
+  display: block;
+  font-size: clamp(76px, 15vw, 210px);
+  line-height: 0.98;
+  padding-bottom: 0.06em;
+  background-size: 200% 100%;
+  animation: rise 1100ms var(--ease) 120ms both, sheen 8s linear infinite;
+  filter: drop-shadow(0 0 40px rgba(34, 227, 255, 0.25));
 }
 .role {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin: 32px 0 0;
+  gap: 10px;
+  margin: 28px 0 0;
   min-height: 1.6em;
   font-family: var(--font-num);
-  font-size: clamp(18px, 2.2vw, 24px);
+  font-size: clamp(16px, 1.8vw, 20px);
+  letter-spacing: 0.18em;
   color: var(--ink);
   animation: rise 1000ms var(--ease) 240ms both;
 }
-.prompt {
+.bracket {
   color: var(--c1);
-}
-.caret {
-  width: 2px;
-  height: 1.1em;
-  background: var(--c1);
-  animation: blink 1s steps(1) infinite;
 }
 .summary {
   max-width: 640px;
@@ -158,6 +159,30 @@
   border-color: var(--c1);
   transform: translateY(-2px);
 }
+.ticker {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 48px;
+  padding: 18px var(--pad);
+  border-top: 1px solid var(--line);
+  font-family: var(--font-num);
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  color: var(--mute);
+  white-space: nowrap;
+  overflow: hidden;
+  background: linear-gradient(180deg, transparent, rgba(4, 6, 11, 0.8));
+}
+.ticker span::before {
+  content: '◆';
+  margin-right: 12px;
+  color: var(--c2);
+  font-size: 8px;
+  vertical-align: 2px;
+}
 .scroll {
   position: absolute;
   left: 50%;
@@ -189,6 +214,11 @@
     opacity: 1;
     transform: none;
     filter: none;
+  }
+}
+@keyframes sheen {
+  to {
+    background-position: -200% 0;
   }
 }
 @keyframes float {
@@ -235,8 +265,14 @@
     padding: 0;
   }
   .role,
-  .caret,
   .cta .primary {
     display: none;
+  }
+  .line2 {
+    font-size: 28pt;
+    filter: none;
+  }
+  .line1 {
+    font-size: 14pt;
   }
 }

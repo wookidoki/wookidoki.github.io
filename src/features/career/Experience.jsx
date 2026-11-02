@@ -3,6 +3,7 @@ import Section from '../../components/Section.jsx';
 import Reveal from '../../components/Reveal.jsx';
 import { useSettings } from '../settings/SettingsContext.jsx';
 import { experience } from '../../data/career.js';
+import { tiltHandlers } from '../../hooks/useTilt.js';
 import styles from './Experience.module.css';
 
 const KIND = { dev: '개발', consult: '컨설팅', biz: '창업' };
@@ -31,7 +32,8 @@ function useLineProgress(ref) {
 
 function Project({ p, i }) {
   return (
-    <Reveal as="article" delay={Math.min(i, 4) * 60} className={styles.project}>
+    <Reveal as="article" delay={Math.min(i, 4) * 60} className={styles.pWrap}>
+      <div className={styles.project} {...tiltHandlers()}>
       <header className={styles.pHead}>
         <span className={`${styles.kind} ${styles[p.kind]}`}>{KIND[p.kind]}</span>
         <h4 className={styles.pName}>{p.name}</h4>
@@ -51,6 +53,7 @@ function Project({ p, i }) {
           ))}
         </ul>
       )}
+      </div>
     </Reveal>
   );
 }
@@ -66,13 +69,13 @@ export default function Experience() {
           <span className={styles.fill} style={{ transform: `scaleY(${progress})` }} />
         </span>
         {experience.map((c) => {
-          const projects = [...c.projects].sort((a, b) => (a.kind === track ? 0 : 1) - (b.kind === track ? 0 : 1));
+          const projects = [...c.projects].sort((a, b) => (a.order?.[track] ?? 99) - (b.order?.[track] ?? 99));
           return (
             <div key={c.company} className={styles.company}>
               <Reveal className={styles.cHead}>
                 <span className={`no-print ${styles.node}`} aria-hidden />
                 <p className={styles.period}>
-                  {c.start} — {c.end}
+                  {c.start} – {c.end}
                 </p>
                 <h3 className={styles.cName}>
                   {c.company}

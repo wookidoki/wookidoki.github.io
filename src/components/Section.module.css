@@ -12,14 +12,20 @@
   margin-bottom: 56px;
 }
 .eyebrow {
-  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 16px;
   font-family: var(--font-num);
   font-size: 13px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
+  color: var(--c1);
+}
+.bar {
+  width: 36px;
+  height: 1px;
   background: var(--grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  box-shadow: 0 0 10px var(--c1);
 }
 .title {
   margin: 0;
@@ -46,6 +52,8 @@
   }
   .eyebrow {
     color: #666;
-    background: none;
+  }
+  .bar {
+    display: none;
   }
 }

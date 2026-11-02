@@ -71,17 +71,25 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
+.pWrap {
+  perspective: 1200px;
+}
 .project {
+  --mx: 50%;
+  --my: 0%;
+  --rx: 0deg;
+  --ry: 0deg;
+  height: 100%;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  background: radial-gradient(500px circle at var(--mx) var(--my), rgba(123, 97, 255, 0.1), transparent 45%),
+    var(--surface);
   padding: 26px 26px 22px;
   border-radius: var(--radius);
-  background: var(--surface);
   border: 1px solid var(--line);
-  transition: border-color 300ms var(--ease), background 300ms var(--ease), transform 400ms var(--ease);
+  transition: border-color 300ms var(--ease), transform 200ms var(--ease);
 }
 .project:hover {
   border-color: rgba(34, 227, 255, 0.35);
-  background: var(--surface-2);
-  transform: translateY(-3px);
 }
 .kind {
   display: inline-block;

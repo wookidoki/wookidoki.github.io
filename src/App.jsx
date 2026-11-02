@@ -1,4 +1,5 @@
 import TopBar from './features/settings/TopBar.jsx';
+import CursorGlow from './components/CursorGlow.jsx';
 import Hero from './features/career/Hero.jsx';
 import Strengths from './features/career/Strengths.jsx';
 import Experience from './features/career/Experience.jsx';
@@ -11,6 +12,7 @@ import styles from './App.module.css';
 export default function App() {
   return (
     <>
+      <CursorGlow />
       <TopBar />
       <main>
         <Hero />
