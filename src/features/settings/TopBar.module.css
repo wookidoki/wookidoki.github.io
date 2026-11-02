@@ -1,0 +1,135 @@
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: saturate(1.4) blur(14px);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  border-bottom: var(--line-w) solid var(--line);
+}
+.inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+.brand {
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  white-space: nowrap;
+}
+.brandSub {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--mute);
+}
+
+/* 세그먼트 버튼: 선택 표시가 미끄러지듯 이동 */
+.seg {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+  padding: 3px;
+  border: var(--line-w) solid var(--line);
+  border-radius: 999px;
+  background: var(--bg-soft);
+}
+.segBtn {
+  position: relative;
+  z-index: 1;
+  border: 0;
+  background: none;
+  padding: 6px 18px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--mute);
+  cursor: pointer;
+  transition: color 300ms var(--ease);
+}
+.on {
+  color: var(--bg);
+}
+.segThumb {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  border-radius: 999px;
+  background: var(--ink);
+  transition: transform 420ms var(--ease);
+}
+.segThumb[data-pos='1'] {
+  transform: translateX(100%);
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.palettes {
+  display: flex;
+  gap: 6px;
+  margin-right: var(--space-2);
+}
+.chip {
+  display: flex;
+  padding: 3px;
+  border: var(--line-w) solid transparent;
+  border-radius: 999px;
+  background: none;
+  cursor: pointer;
+  transition: border-color 200ms var(--ease), transform 200ms var(--ease);
+}
+.chip:hover {
+  transform: translateY(-1px);
+}
+.chip i {
+  width: 10px;
+  height: 18px;
+}
+.chip i:first-child {
+  border-radius: 999px 0 0 999px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+.chip i:last-child {
+  border-radius: 0 999px 999px 0;
+}
+.chipOn {
+  border-color: var(--ink);
+}
+.icon {
+  width: 34px;
+  height: 34px;
+  border: var(--line-w) solid var(--line);
+  border-radius: 999px;
+  background: none;
+  color: var(--ink);
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 200ms var(--ease);
+}
+.icon:hover {
+  background: var(--bg-soft);
+}
+@media (max-width: 720px) {
+  .inner {
+    padding: 0 var(--space-4);
+    gap: var(--space-3);
+  }
+  .brandSub,
+  .palettes {
+    display: none;
+  }
+  .segBtn {
+    padding: 6px 12px;
+  }
+}

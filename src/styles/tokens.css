@@ -1,0 +1,153 @@
+/* 디자인 토큰. 색은 60·30·10 규칙: 바탕(60) · 글자/선(30) · 포인트(10, 숫자·링크·현재 위치에만). */
+
+:root {
+  --font-sans: 'Pretendard Variable', Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-num: 'Space Grotesk', var(--font-sans);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+  --space-9: 120px;
+
+  --radius: 2px;
+  --line-w: 1px;
+  --max-w: 1120px;
+  --side-w: 220px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 520ms;
+}
+
+/* ① 페이퍼 & 퍼시먼 — 따뜻한 종이색 + 감 주황 포인트 (핀터레스트 2026 Persimmon) */
+[data-palette='persimmon'] {
+  --bg: #f5f2ec;
+  --bg-soft: #ece7df;
+  --ink: #1d1c1a;
+  --ink-2: #4a4641;
+  --mute: #8a8178;
+  --line: #ddd6cc;
+  --accent: #d9502f;
+  --accent-soft: #f3d9cf;
+}
+[data-palette='persimmon'][data-theme='dark'] {
+  --bg: #161513;
+  --bg-soft: #201e1b;
+  --ink: #eeeae4;
+  --ink-2: #bdb6ad;
+  --mute: #857d74;
+  --line: #2f2c28;
+  --accent: #ff7a57;
+  --accent-soft: #3a231c;
+}
+
+/* ② 스톤 & 딥틸 — 차가운 회백색 + 짙은 청록, 보조 모스 그린 */
+[data-palette='teal'] {
+  --bg: #f1f2ef;
+  --bg-soft: #e5e8e3;
+  --ink: #18201f;
+  --ink-2: #44504d;
+  --mute: #7d8783;
+  --line: #d3d9d4;
+  --accent: #1f5c63;
+  --accent-soft: #d5e4e2;
+}
+[data-palette='teal'][data-theme='dark'] {
+  --bg: #111615;
+  --bg-soft: #18201e;
+  --ink: #e6ecea;
+  --ink-2: #aab6b2;
+  --mute: #6f7c78;
+  --line: #26302e;
+  --accent: #5fb3b0;
+  --accent-soft: #1b3331;
+}
+
+/* ③ 아이보리 & 플럼 누아르 — 아이보리 + 검붉은 자두색, 버터 옐로 한 점 */
+[data-palette='plum'] {
+  --bg: #f7f4f0;
+  --bg-soft: #eee9e2;
+  --ink: #1e1a1d;
+  --ink-2: #4d454b;
+  --mute: #8c8288;
+  --line: #e0d8d3;
+  --accent: #6b2d5c;
+  --accent-soft: #f2e4b0;
+}
+[data-palette='plum'][data-theme='dark'] {
+  --bg: #141113;
+  --bg-soft: #1e191c;
+  --ink: #efe9ec;
+  --ink-2: #bfb3ba;
+  --mute: #84777e;
+  --line: #2d2529;
+  --accent: #d48cc1;
+  --accent-soft: #3a3020;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur: 0ms;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* 인쇄(PDF 제출용): 흰 바탕·검은 글자, 움직임·버튼 숨김 */
+@media print {
+  [data-palette] {
+    --bg: #fff;
+    --bg-soft: #f4f4f4;
+    --ink: #111;
+    --ink-2: #333;
+    --mute: #666;
+    --line: #ccc;
+  }
+  body {
+    font-size: 10.5pt;
+    line-height: 1.55;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

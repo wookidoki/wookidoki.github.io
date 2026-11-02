@@ -1,0 +1,33 @@
+.section {
+  padding-top: var(--space-9);
+  scroll-margin-top: 72px;
+}
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-6);
+  border-bottom: var(--line-w) solid var(--ink);
+}
+.index {
+  font-family: var(--font-num);
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+.title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+@media print {
+  .section {
+    padding-top: 18pt;
+    break-inside: auto;
+  }
+  .head {
+    margin-bottom: 10pt;
+  }
+}
