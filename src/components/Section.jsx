@@ -6,10 +6,6 @@ export default function Section({ id, eyebrow, title, lead, children }) {
     <section id={id} className={styles.section}>
       <div className={styles.inner}>
         <Reveal className={styles.head}>
-          <p className={styles.eyebrow}>
-            <span className={styles.bar} aria-hidden />
-            {eyebrow}
-          </p>
           <h2 className={styles.title}>{title}</h2>
           {lead && <p className={styles.lead}>{lead}</p>}
         </Reveal>

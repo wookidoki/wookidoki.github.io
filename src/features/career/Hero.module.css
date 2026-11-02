@@ -1,12 +1,12 @@
 .hero {
   position: relative;
-  min-height: 92vh;
-  min-height: 92svh;
+  min-height: 0;
   display: flex;
   align-items: center;
   overflow: hidden;
   isolation: isolate;
-  background: radial-gradient(110% 70% at 75% 10%, #0c1426 0%, var(--bg) 62%);
+  background: var(--bg);
+  border-bottom: 1px solid var(--ink);
 }
 .hero canvas {
   opacity: 0.55;
@@ -27,7 +27,7 @@
   width: 100%;
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 120px var(--pad) 80px;
+  padding: 112px var(--pad) 56px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 300px;
   align-items: center;
@@ -91,15 +91,15 @@
   align-items: center;
   height: 44px;
   padding: 0 20px;
-  border-radius: 999px;
+  border-radius: 6px;
   font-size: 14.5px;
   font-weight: 600;
   text-decoration: none;
   transition: border-color 200ms var(--ease), background 200ms var(--ease), opacity 200ms var(--ease);
 }
 .primary {
-  color: #04060b;
-  background: var(--grad);
+  color: #fff;
+  background: var(--ink);
 }
 .primary:hover {
   opacity: 0.9;
@@ -116,22 +116,14 @@
   position: relative;
   animation: rise 1000ms var(--ease) 200ms both;
 }
-.photoWrap::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: 22px;
-  background: linear-gradient(160deg, rgba(34, 227, 255, 0.6), rgba(123, 97, 255, 0.3) 40%, transparent 70%);
-  z-index: -1;
-}
 .photo {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center 20%;
-  border-radius: 21px;
-  background: #0b0f18;
+  border-radius: 4px;
+  background: var(--bg-2);
 }
 @keyframes rise {
   from {

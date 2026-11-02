@@ -1,30 +1,27 @@
 /* 단일 디자인: 딥 다크 + 시안→바이올렛 그라데이션 포인트. 인쇄(PDF)만 흰 바탕. */
 
 :root {
-  --bg: #04060b;
-  --bg-2: #080c14;
-  --surface: rgba(255, 255, 255, 0.035);
-  --surface-2: rgba(255, 255, 255, 0.06);
-  --line: rgba(255, 255, 255, 0.08);
-  --line-2: rgba(255, 255, 255, 0.14);
-  --ink: #f3f6fb;
-  --ink-2: #b4bdcc;
-  --mute: #6f7a8c;
-
-  --c1: #22e3ff; /* 시안 */
-  --c2: #7b61ff; /* 바이올렛 */
-  --c3: #ff4fd8; /* 마젠타 한 점 */
-  --grad: linear-gradient(100deg, var(--c1) 0%, var(--c2) 55%, var(--c3) 100%);
-  --glow: 0 0 40px rgba(34, 227, 255, 0.25), 0 0 80px rgba(123, 97, 255, 0.18);
-
-  --font-sans: 'Pretendard Variable', Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-  --font-num: 'Space Grotesk', var(--font-sans);
-
-  --max-w: 1200px;
-  --pad: clamp(20px, 4vw, 40px);
-  --radius: 16px;
+  --bg: #ffffff;
+  --bg-2: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #f6f7f9;
+  --line: #e5e8eb;
+  --line-2: #d1d6db;
+  --ink: #191f28;
+  --ink-2: #4e5968;
+  --mute: #8b95a1;
+  --c1: #2f5fa7;
+  --c2: #2f5fa7;
+  --c3: #2f5fa7;
+  --grad: #191f28;
+  --glow: none;
+  --font-sans: 'Pretendard Variable', Pretendard, -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  --font-num: 'Pretendard Variable', Pretendard, sans-serif;
+  --max-w: 1040px;
+  --pad: clamp(20px, 4vw, 32px);
+  --radius: 0px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --dur: 700ms;
+  --dur: 500ms;
 }
 
 *,
@@ -66,10 +63,7 @@ a {
 }
 
 .grad-text {
-  background: var(--grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--ink);
 }
 
 @media (prefers-reduced-motion: reduce) {

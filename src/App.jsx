@@ -24,7 +24,7 @@ export default function App() {
       <footer className={styles.footer}>
         <div className={styles.inner}>
           <p className={styles.big}>
-            <span className="grad-text">Contact</span>
+            연락처
           </p>
           <div className={styles.links}>
             <a href={`mailto:${person.email}`}>{person.email}</a>

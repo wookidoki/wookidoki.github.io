@@ -1,9 +1,7 @@
 .footer {
   position: relative;
-  margin-top: clamp(120px, 14vw, 200px);
-  padding: 96px 0 48px;
+  padding: 48px 0;
   border-top: 1px solid var(--line);
-  background: radial-gradient(80% 120% at 50% 100%, rgba(123, 97, 255, 0.16), transparent 60%);
 }
 .inner {
   max-width: var(--max-w);
@@ -12,7 +10,7 @@
 }
 .big {
   margin: 0;
-  font-size: clamp(32px, 5vw, 64px);
+  font-size: 26px;
   font-weight: 800;
   letter-spacing: -0.045em;
   line-height: 1.15;
