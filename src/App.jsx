@@ -1,6 +1,7 @@
 import TopBar from './features/settings/TopBar.jsx';
 import Hero from './features/career/Hero.jsx';
 import Strengths from './features/career/Strengths.jsx';
+import Featured from './features/career/Featured.jsx';
 import Experience from './features/career/Experience.jsx';
 import CardList from './features/career/Personal.jsx';
 import SkillMarquee from './features/career/SkillMarquee.jsx';
@@ -14,6 +15,7 @@ export default function App() {
       <TopBar />
       <main>
         <Hero />
+        <Featured />
         <Strengths />
         <Experience />
         <CardList id="personal" eyebrow="SIDE PROJECTS" title="개인 프로젝트" items={personal} />
@@ -23,9 +25,8 @@ export default function App() {
       </main>
       <footer className={styles.footer}>
         <div className={styles.inner}>
-          <p className={styles.big}>
-            연락처
-          </p>
+          <p className={styles.big}>함께 일할 기회를 찾고 있습니다</p>
+          <p className={styles.sub}>고객 현장의 문제를 데이터와 AI로 푸는 일이라면 편하게 연락 주세요.</p>
           <div className={styles.links}>
             <a href={`mailto:${person.email}`}>{person.email}</a>
             <a href={person.github} target="_blank" rel="noreferrer">

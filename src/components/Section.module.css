@@ -1,7 +1,6 @@
 .section {
   position: relative;
-  padding: 56px 0;
-  border-bottom: 1px solid var(--line);
+  padding: 96px 0;
   scroll-margin-top: 40px;
 }
 .inner {
@@ -10,7 +9,7 @@
   padding: 0 var(--pad);
 }
 .head {
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 .eyebrow {
   display: flex;
@@ -28,8 +27,10 @@
   background: var(--grad);
 }
 .title {
+  position: relative;
   margin: 0;
-  font-size: 26px;
+  padding-top: 18px;
+  font-size: clamp(28px, 3vw, 36px);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1.15;
@@ -55,5 +56,30 @@
   }
   .bar {
     display: none;
+  }
+}
+
+.title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--c1);
+}
+.section:nth-of-type(odd) {
+  background: var(--bg-2);
+}
+@media print {
+  .section:nth-of-type(odd) {
+    background: none;
+  }
+  .title::before {
+    display: none;
+  }
+  .section {
+    padding: 14pt 0 0;
   }
 }

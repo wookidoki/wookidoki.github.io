@@ -11,20 +11,71 @@ export const person = {
 
 export const tracks = {
   dev: {
-    label: '개발',
-    roles: ['FULL-STACK DEVELOPER', 'UNIFIER INTEGRATION', 'DATA AUTOMATION'],
-    headline: ['풀스택 개발자', '이승욱'],
-    summary: 'B2B 전자조달 플랫폼 개발 · Oracle Primavera Unifier 연동 업무 도구 개발',
+    label: 'AI·개발',
+    roles: ['FORWARD DEPLOYED ENGINEER', 'AI AGENT · RAG', 'FULL-STACK'],
+    headline: ['현장 데이터를 AI 에이전트로 잇는 엔지니어', '이승욱'],
+    summary: '조선·해양, 반도체 건설 현장의 고객 시스템 가까이에서 요구를 정의하고, Unifier 데이터를 RAG·에이전트·웹앱으로 연결해 폐쇄망까지 배포합니다.',
   },
   consult: {
     label: '컨설팅',
     roles: ['UNIFIER CONSULTANT', 'BP ARCHITECT', 'PMIS · AWP'],
     headline: ['Unifier 컨설턴트', '이승욱'],
-    summary: 'Oracle Primavera Unifier 구축 제안 · BP 설계 · 운영 유지보수',
+    summary: 'Oracle Primavera Unifier 구축 제안, BP 설계, REST 연동, 운영 유지보수를 맡고 있습니다.',
   },
 };
 
+export const highlights = [
+  { value: '3종', label: 'AI 에이전트 직접 설계·개발' },
+  { value: '3단계', label: '폐쇄망 배포 (외부망·보안점검·내부망)' },
+  { value: '1년치', label: '작업일보 REST 이관·원본 대조' },
+  { value: '3개 국어', label: '3D 진척 뷰어 (한·영·일)' },
+];
+
+// 대표 프로젝트 (이미지 카드). image가 없으면 diagram 단계 표시.
+export const featured = [
+  {
+    key: 'agent',
+    tag: 'AI 에이전트 · RAG',
+    name: 'Unifier AI Agent',
+    desc: 'Unifier 데이터를 자연어로 조회·가공하는 하이브리드 Agentic RAG. 정형 데이터는 REST 툴 콜, 첨부 문서는 pgvector 검색으로 나눠 처리하고, 모호한 지표 요청은 되묻습니다.',
+    diagram: ['질문', '툴 선택', 'REST 조회 · 문서 검색', '근거 포함 답변'],
+    stack: ['Next.js', 'Anthropic SDK', 'pgvector', 'BGE-m3', 'next-auth'],
+  },
+  {
+    key: 'viewer',
+    tag: '3D · 데이터 시각화',
+    name: 'DTS 3D Progress',
+    desc: 'Unifier AWP 데이터를 플랜트 3D 모델 위에 작업패키지별 진척 히트맵으로 보여주는 웹앱. 대시보드, EVM 분석, 폐쇄망용 내부 뷰어와 IFC 업로드 지원.',
+    image: '/projects/viewer.webp',
+    link: 'https://dts-viewer-one.vercel.app',
+    stack: ['Next.js', 'Three.js', 'Babylon.js', 'xeokit', 'Unifier REST'],
+  },
+  {
+    key: 'doran',
+    tag: '차량용 음성 AI',
+    name: '도란 — 가족 여행 목소리 앨범',
+    desc: '현대자동차 Pleos 앱 공모전 팀 프로젝트(진행 중). "도란아"라고 부르면 가는 길의 휴게소를 찾아 경유지로 넣고, 멈춘 곳의 가족 목소리를 3D 지도 앨범으로 남깁니다. 차량 데이터로 제안 시점을 정합니다.',
+    diagram: ['호출어 인식', '차량 상태 읽기', '장소 추천 · 경유지', '목소리 앨범'],
+    stack: ['Android', 'Kotlin', 'Python', 'OpenAI API', 'Render'],
+  },
+  {
+    key: 'quant',
+    tag: '머신러닝 · 자동화',
+    name: 'AI 주식 매매 모델',
+    desc: '국내 주식 10년치 데이터로 LightGBM 종목 점수 모델을 만들고 walk-forward로 검증. 장 마감 후 수집·점수 계산·신호 게시·모의 매매 기록까지 매일 자동으로 돕니다.',
+    image: '/projects/quant.webp',
+    link: 'https://quant-lab-eta.vercel.app',
+    stack: ['Python', 'LightGBM', 'FastAPI', 'Next.js'],
+  },
+];
+
 export const strengths = [
+  {
+    key: 'agent',
+    title: 'AI 에이전트 · RAG',
+    body: 'tool-use 에이전트, 하이브리드 RAG(REST 툴 + 벡터 검색), 되묻기, 권한 스코핑, prompt caching',
+    tags: ['Anthropic SDK', 'pgvector', 'BGE-m3', 'tool-use'],
+  },
   {
     key: 'fullstack',
     title: '풀스택 개발',
@@ -42,12 +93,6 @@ export const strengths = [
     title: 'AI · 데이터 모델링',
     body: '머신러닝 주식 매매 모델 개발, 텍스트 마이닝·자연어 처리 연구(SBERT, LDA)',
     tags: ['LightGBM', 'SBERT', 'LDA', 'pandas'],
-  },
-  {
-    key: 'domain',
-    title: '금융 · 경영',
-    body: '경영정보학 전공, 투자자문사 공동 창업 및 운영',
-    tags: ['경영정보학', '투자자문', '데이터 분석'],
   },
 ];
 
@@ -88,10 +133,12 @@ export const experience = [
           '고객 요구사항 8개 기능 영역을 Unifier BP 구조로 매핑',
           'AWP BP 설계 (작업구역, 작업패키지, 설치작업패키지, 객체 매핑, 검사, 진척기준)',
           '작업 패키지 3D 진척 뷰어 개발 (폐쇄망 환경, 한·영·일 지원)',
+          'Unifier AI Agent 설계·개발 (하이브리드 Agentic RAG, 문서 인제스천, 회사별 카탈로그, 지표 되묻기, 권한 스코핑)',
+          '기성 기반 일정 에이전트 개발 (Claude tool-use, EVM·CPM 결정론 엔진, 음성 입력, 오프라인 폴백)',
           '진척률·공수 집계 공식 오류 수정 및 검증',
           '시연 시나리오 작성, 한국어·영어 시연 영상 제작',
         ],
-        stack: ['Unifier uDesigner', 'REST API', 'Next.js', 'Three.js', 'glTF/IFC'],
+        stack: ['Unifier uDesigner', 'REST API', 'Next.js', 'Three.js', 'Anthropic SDK', 'pgvector'],
       },
       {
         kind: 'consult',
@@ -103,6 +150,7 @@ export const experience = [
         tasks: [
           '현장 출역 관리 엑셀 도구에 업체 일괄 등록·대량 수정 기능 추가 (현장 배포)',
           '작업일보 1년치 데이터 이관 (엑셀 파싱, REST API 등록, 원본 대조 검증)',
+          '해외 현장 영문 OS 매크로 장애 해결 (코드페이지 원인 규명, ASCII 매크로 재작성, 마스터 자동 채움·20항목 검증)',
           '계정·권한 일괄 처리 도구 개발 (사전 검증, 테스트 모드, 실행 로그)',
           '문서 검토 이력 전수조사 (전 프로젝트 REST 수집, 판정 로직 작성)',
           '품질검사 문서번호 체계 이관, 품질검사 마스터 현장 간 동기화',
@@ -196,6 +244,18 @@ export const experience = [
 
 export const personal = [
   {
+    name: '도란 — 차량용 가족 여행 음성 AI 앱 (현대자동차 Pleos 앱 공모전)',
+    period: '2026.11 – 진행 중',
+    role: '팀 5명 · 기획, 앱, AI 서버 (커밋 94건 중 55건)',
+    tasks: [
+      '실제 가족 여행 장면에 대입해 기능 재기획 (출퇴근 오인식, 늦은 밤 음성 등 문제 수정)',
+      '호출어 인식, 경로상 장소 추천과 내비 경유지 추가, 정차 지점 음성 녹음, 3D 지도 앨범',
+      '기어·도어·탑승 인원 등 차량 데이터로 제안 시점과 화면 전환',
+      'LLM 키 없이도 규칙 기반 응답, AI 서버 배포와 release APK',
+    ],
+    stack: ['Android', 'Kotlin', 'Python', 'OpenAI API', 'Render'],
+  },
+  {
     name: 'AI 주식 매매 모델 개발',
     period: '2026.10 – 현재',
     role: '1인 개발',
@@ -270,7 +330,7 @@ export const research = [
 ];
 
 export const skills = [
-  'Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Drizzle ORM', 'Three.js',
+  'Anthropic SDK', 'RAG', 'pgvector', 'Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Drizzle ORM', 'Three.js',
   'Oracle Primavera Unifier', 'uDesigner', 'REST API', 'BI Publisher', 'Python', 'pandas',
   'PowerShell', 'VBA', 'Excel COM', 'LightGBM', 'SBERT', 'FastAPI', 'Docker', 'Nginx', 'Vercel', 'GitHub Actions',
 ];

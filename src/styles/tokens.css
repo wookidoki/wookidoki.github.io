@@ -1,25 +1,29 @@
-/* 단일 디자인: 딥 다크 + 시안→바이올렛 그라데이션 포인트. 인쇄(PDF)만 흰 바탕. */
+/* 흰 바탕 + 짙은 남색 히어로 + 청록 포인트. 인쇄(PDF)는 흰 바탕. */
 
 :root {
   --bg: #ffffff;
-  --bg-2: #f6f7f9;
+  --bg-2: #f4f6f8;
   --surface: #ffffff;
-  --surface-2: #f6f7f9;
-  --line: #e5e8eb;
-  --line-2: #d1d6db;
-  --ink: #191f28;
-  --ink-2: #4e5968;
-  --mute: #8b95a1;
-  --c1: #2f5fa7;
-  --c2: #2f5fa7;
-  --c3: #2f5fa7;
-  --grad: #191f28;
+  --surface-2: #f4f6f8;
+  --line: #e6e9ee;
+  --line-2: #d3d9e0;
+  --ink: #111827;
+  --ink-2: #4b5563;
+  --mute: #8a94a3;
+  --c1: #0f9488;
+  --c2: #14b8a6;
+  --c3: #0b766d;
+  --navy: #0b1220;
+  --navy-2: #121b2e;
+  --grad: #0f9488;
   --glow: none;
   --font-sans: 'Pretendard Variable', Pretendard, -apple-system, 'Apple SD Gothic Neo', sans-serif;
   --font-num: 'Pretendard Variable', Pretendard, sans-serif;
-  --max-w: 1040px;
-  --pad: clamp(20px, 4vw, 32px);
-  --radius: 0px;
+  --max-w: 1160px;
+  --pad: clamp(20px, 4vw, 40px);
+  --radius: 18px;
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px rgba(16, 24, 40, 0.06);
+  --shadow-lg: 0 2px 4px rgba(16, 24, 40, 0.05), 0 20px 48px rgba(16, 24, 40, 0.12);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --dur: 500ms;
 }
@@ -63,7 +67,7 @@ a {
 }
 
 .grad-text {
-  color: var(--ink);
+  color: inherit;
 }
 
 @media (prefers-reduced-motion: reduce) {

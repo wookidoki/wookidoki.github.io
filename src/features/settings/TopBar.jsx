@@ -4,6 +4,7 @@ import { person, tracks } from '../../data/career.js';
 import styles from './TopBar.module.css';
 
 const LINKS = [
+  { id: 'featured', label: '대표 프로젝트' },
   { id: 'strengths', label: '역량' },
   { id: 'experience', label: '경력' },
   { id: 'personal', label: '프로젝트' },

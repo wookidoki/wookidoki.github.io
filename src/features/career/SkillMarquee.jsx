@@ -5,7 +5,11 @@ import styles from './SkillMarquee.module.css';
 export default function SkillMarquee() {
   return (
     <Section id="skills" title="기술">
-      <p className={styles.list}>{skills.join(' · ')}</p>
+      <ul className={styles.list}>
+        {skills.map((s) => (
+          <li key={s}>{s}</li>
+        ))}
+      </ul>
     </Section>
   );
 }

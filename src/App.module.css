@@ -1,7 +1,13 @@
 .footer {
   position: relative;
-  padding: 48px 0;
-  border-top: 1px solid var(--line);
+  padding: 88px 0 48px;
+  background: var(--navy);
+  color: #fff;
+}
+.sub {
+  margin: 14px 0 0;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.65);
 }
 .inner {
   max-width: var(--max-w);
@@ -10,7 +16,7 @@
 }
 .big {
   margin: 0;
-  font-size: 26px;
+  font-size: clamp(26px, 3vw, 36px);
   font-weight: 800;
   letter-spacing: -0.045em;
   line-height: 1.15;
@@ -24,24 +30,31 @@
 }
 .links a {
   text-decoration: none;
-  border-bottom: 1px solid var(--line-2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding-bottom: 2px;
   transition: border-color 200ms var(--ease), color 200ms var(--ease);
 }
 .links a:hover {
-  color: var(--c1);
-  border-color: var(--c1);
+  color: #5eead4;
+  border-color: #5eead4;
 }
 .note {
   margin: 72px 0 0;
   font-size: 12.5px;
-  color: var(--mute);
+  color: rgba(255, 255, 255, 0.45);
 }
 @media print {
   .footer {
     margin-top: 14pt;
     padding: 10pt 0 0;
     background: none;
+    color: #111;
+  }
+  .sub {
+    display: none;
+  }
+  .links a {
+    border-color: #ccc;
   }
   .big {
     display: none;
