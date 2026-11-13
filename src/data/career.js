@@ -90,9 +90,9 @@ export const strengths = [
   },
   {
     key: 'ai',
-    title: 'AI · 데이터 모델링',
-    body: '머신러닝 주식 매매 모델 개발, 텍스트 마이닝·자연어 처리 연구(SBERT, LDA)',
-    tags: ['LightGBM', 'SBERT', 'LDA', 'pandas'],
+    title: '데이터 파이프라인 · ML',
+    body: '10년치 데이터 수집 자동화, LightGBM 모델 walk-forward 검증, 매일 도는 수집·예측·알림 파이프라인',
+    tags: ['LightGBM', 'pandas', 'FastAPI', 'SQLite'],
   },
 ];
 
@@ -332,7 +332,7 @@ export const research = [
 export const skills = [
   'Anthropic SDK', 'RAG', 'pgvector', 'Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Drizzle ORM', 'Three.js',
   'Oracle Primavera Unifier', 'uDesigner', 'REST API', 'BI Publisher', 'Python', 'pandas',
-  'PowerShell', 'VBA', 'Excel COM', 'LightGBM', 'SBERT', 'FastAPI', 'Docker', 'Nginx', 'Vercel', 'GitHub Actions',
+  'PowerShell', 'VBA', 'Excel COM', 'LightGBM', 'FastAPI', 'Docker', 'Nginx', 'Vercel', 'GitHub Actions',
 ];
 
 export const education = [

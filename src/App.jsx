@@ -3,10 +3,9 @@ import Hero from './features/career/Hero.jsx';
 import Strengths from './features/career/Strengths.jsx';
 import Featured from './features/career/Featured.jsx';
 import Experience from './features/career/Experience.jsx';
-import CardList from './features/career/Personal.jsx';
 import SkillMarquee from './features/career/SkillMarquee.jsx';
 import Education from './features/career/Education.jsx';
-import { person, personal, research } from './data/career.js';
+import { person } from './data/career.js';
 import styles from './App.module.css';
 
 export default function App() {
@@ -18,8 +17,6 @@ export default function App() {
         <Featured />
         <Strengths />
         <Experience />
-        <CardList id="personal" eyebrow="SIDE PROJECTS" title="개인 프로젝트" items={personal} />
-        <CardList id="research" eyebrow="RESEARCH" title="연구" items={research} />
         <SkillMarquee />
         <Education />
       </main>
